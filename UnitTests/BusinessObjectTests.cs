@@ -30,5 +30,22 @@ namespace UnitTests
             Assert.AreEqual(expected_name, user.Name);
             Assert.IsInstanceOfType(expected_profile, typeof(Profile));
         }
+
+        [TestMethod]
+        public void TestApiManagerRetrieveProfileThatExists()
+        {
+            ApiManager manager = new ApiManager();
+            Profile profile;
+            
+            Assert.AreEqual(true, manager.RetrieveProfile(out profile));
+        }
+        [TestMethod]
+        public void TestApiManagerRetrieveProfileThatDoesNotExist()
+        {
+            ApiManager manager = new ApiManager();
+            Profile profile;
+
+            Assert.AreEqual(true, manager.RetrieveProfile(out profile));
+        }
     }
 }

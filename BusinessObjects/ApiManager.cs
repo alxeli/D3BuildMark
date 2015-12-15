@@ -6,11 +6,28 @@ using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
-    class ApiManager
+    public class ApiManager
     {
+        //TODO: add ZTN D3 API object here
+
         public ApiManager()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("API not implemented");
+        }
+
+        public bool RetrieveProfile(out Profile profile)
+        {
+            profile = new Profile();
+
+            //TODO: use API to check for profile existence
+            if(false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
