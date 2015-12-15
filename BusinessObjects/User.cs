@@ -16,6 +16,12 @@ namespace BusinessObjects
             m_name = null;
             m_profile = new Profile();
         }
+        public User(string name)
+        {
+            m_name = name;
+            m_profile = new Profile();
+        }
+
 
         public string Name
         {

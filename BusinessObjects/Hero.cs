@@ -29,8 +29,8 @@ namespace BusinessObjects
         }
         public string Class
         {
-            get { return m_name; }
-            set { m_name = value; }
+            get { return m_class; }
+            set { m_class = value; }
         }
         public List<BuildSnapshot> BuildSnapshots
         {
