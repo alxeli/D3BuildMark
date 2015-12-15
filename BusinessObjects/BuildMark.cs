@@ -12,7 +12,6 @@ namespace BusinessObjects
         private string m_damage;
         private string m_toughness;
         private string m_recovery;
-        private BuildSnapshot m_build;
         private bool m_is_calculated;
         private DateTime m_date_last_calculated;
 
@@ -22,7 +21,6 @@ namespace BusinessObjects
             m_damage = null;
             m_toughness = null;
             m_recovery = null;
-            m_build = null;
             m_is_calculated = false;
         }
 
@@ -52,11 +50,6 @@ namespace BusinessObjects
         {
             get { return m_recovery; }
             set { m_recovery = value; }
-        }
-        public BuildSnapshot Build
-        {
-            get { return m_build; }
-            set { m_build = value; }
         }
         public bool isCalculated
         {

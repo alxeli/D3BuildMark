@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
+    /// <summary>
+    /// Stores the name and a list of attributes for an item.
+    /// Used by: BuildSnapshot.
+    /// Uses: n/a.
+    /// </summary>
+    
     public class Item
     {
         private string m_name;

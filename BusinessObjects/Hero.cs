@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace BusinessObjects
 {
     /// <summary>
-    /// Stores the name, class, and build snapshots for a hero
-    /// Used by: Profile
-    /// Uses: BuildSnapshot
+    /// Stores the name, class, and build snapshots for a hero.
+    /// Used by: Profile.
+    /// Uses: BuildSnapshot.
     /// </summary>
 
     public class Hero
@@ -19,6 +19,12 @@ namespace BusinessObjects
         {
             m_name = null;
             m_class = null;
+            m_build_snapshots = new List<BuildSnapshot>();
+        }
+        public Hero(string name, string class_name)
+        {
+            m_name = name;
+            m_class = class_name;
             m_build_snapshots = new List<BuildSnapshot>();
         }
 

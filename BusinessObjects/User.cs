@@ -21,8 +21,7 @@ namespace BusinessObjects
             m_name = name;
             m_profile = new Profile();
         }
-
-
+        
         public string Name
         {
             get { return m_name; }

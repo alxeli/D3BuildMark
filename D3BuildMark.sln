@@ -9,6 +9,108 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "Business
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{351FE816-BCD9-42A7-B701-B778DA199DEA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{FB74B73B-2909-4207-AF8D-62598FDDB4A2}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\changes.txt = Documentation\changes.txt
+		Documentation\todo.txt = Documentation\todo.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Object Model", "Object Model", "{3149403E-A04C-4A51-8E5F-4013D830C656}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Object Model\ClassDiagram1.0.vsdx = Documentation\Object Model\ClassDiagram1.0.vsdx
+		Documentation\Object Model\ClassDiagram2.0.vsdx = Documentation\Object Model\ClassDiagram2.0.vsdx
+		Documentation\Object Model\ClassDiagram3.0.vsdx = Documentation\Object Model\ClassDiagram3.0.vsdx
+		Documentation\Object Model\Diablo III BuildMark - Object Model 1.0.docx = Documentation\Object Model\Diablo III BuildMark - Object Model 1.0.docx
+		Documentation\Object Model\Diablo III BuildMark - Object Model 2.0.docx = Documentation\Object Model\Diablo III BuildMark - Object Model 2.0.docx
+		Documentation\Object Model\ExecutiveClassDiagram1.0.vsdx = Documentation\Object Model\ExecutiveClassDiagram1.0.vsdx
+		Documentation\Object Model\ExecutiveClassDiagram2.0.vsdx = Documentation\Object Model\ExecutiveClassDiagram2.0.vsdx
+		Documentation\Object Model\ExecutiveClassDiagram3.0.vsdx = Documentation\Object Model\ExecutiveClassDiagram3.0.vsdx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Use Case Model", "Use Case Model", "{74E04EE8-2F66-4AB5-A7CC-96CD3236CC0C}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Use Case Model\ContextDiagram1.0.vsdx = Documentation\Use Case Model\ContextDiagram1.0.vsdx
+		Documentation\Use Case Model\ContextDiagram1.1.vsdx = Documentation\Use Case Model\ContextDiagram1.1.vsdx
+		Documentation\Use Case Model\ContextDiagram1.2.vsdx = Documentation\Use Case Model\ContextDiagram1.2.vsdx
+		Documentation\Use Case Model\CoverPage.docx = Documentation\Use Case Model\CoverPage.docx
+		Documentation\Use Case Model\D3BuildMarkMockupUI.png = Documentation\Use Case Model\D3BuildMarkMockupUI.png
+		Documentation\Use Case Model\D3BuildMarkMockupUI.psd = Documentation\Use Case Model\D3BuildMarkMockupUI.psd
+		Documentation\Use Case Model\D3BuildMarkMockupUI_v2.png = Documentation\Use Case Model\D3BuildMarkMockupUI_v2.png
+		Documentation\Use Case Model\D3BuildMarkMockupUI_v2.psd = Documentation\Use Case Model\D3BuildMarkMockupUI_v2.psd
+		Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.0.docx = Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.0.docx
+		Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.1.docx = Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.1.docx
+		Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.2.docx = Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.2.docx
+		Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.3.docx = Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.3.docx
+		Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.4.docx = Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.4.docx
+		Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.5.docx = Documentation\Use Case Model\Diablo III BuildMark - Use Case Model 1.5.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Use Cases", "Use Cases", "{D704F1F3-1DA7-41DB-BF66-5EFCDF063B8E}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Use Cases\P-000-UserRegistration-1.docx = Documentation\Use Cases\P-000-UserRegistration-1.docx
+		Documentation\Use Cases\P-005-UserLogin-1.docx = Documentation\Use Cases\P-005-UserLogin-1.docx
+		Documentation\Use Cases\P-006-UserLogout-1.docx = Documentation\Use Cases\P-006-UserLogout-1.docx
+		Documentation\Use Cases\P-010-CreateProfile-1.docx = Documentation\Use Cases\P-010-CreateProfile-1.docx
+		Documentation\Use Cases\P-015-EditProfile-1.docx = Documentation\Use Cases\P-015-EditProfile-1.docx
+		Documentation\Use Cases\P-020-AddHero-1.docx = Documentation\Use Cases\P-020-AddHero-1.docx
+		Documentation\Use Cases\P-025-SaveHeroSnapshot-1.docx = Documentation\Use Cases\P-025-SaveHeroSnapshot-1.docx
+		Documentation\Use Cases\P-030-UpdateHero-1.docx = Documentation\Use Cases\P-030-UpdateHero-1.docx
+		Documentation\Use Cases\P-035-EditAccountSettings-1.docx = Documentation\Use Cases\P-035-EditAccountSettings-1.docx
+		Documentation\Use Cases\S-000-UpdateBenchmarks-1.docx = Documentation\Use Cases\S-000-UpdateBenchmarks-1.docx
+		Documentation\Use Cases\UX-000-ViewProfile-1.docx = Documentation\Use Cases\UX-000-ViewProfile-1.docx
+		Documentation\Use Cases\UX-005-ViewHero-1.docx = Documentation\Use Cases\UX-005-ViewHero-1.docx
+		Documentation\Use Cases\UX-010-CompareHeroSnapshots-1.docx = Documentation\Use Cases\UX-010-CompareHeroSnapshots-1.docx
+		Documentation\Use Cases\UX-015-ViewHeroBenchmarks-1.docx = Documentation\Use Cases\UX-015-ViewHeroBenchmarks-1.docx
+		Documentation\Use Cases\UX-020-Search-1.docx = Documentation\Use Cases\UX-020-Search-1.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proposal", "Proposal", "{36AD38B5-B0DC-4F5C-AE78-341AAA94C5E4}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Proposal\Diablo III BuildMark 1.0.docx = Documentation\Proposal\Diablo III BuildMark 1.0.docx
+		Documentation\Proposal\Diablo III BuildMark 1.1.docx = Documentation\Proposal\Diablo III BuildMark 1.1.docx
+		Documentation\Proposal\Diablo III BuildMark 1.2.docx = Documentation\Proposal\Diablo III BuildMark 1.2.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamic Model", "Dynamic Model", "{6D8F54DE-D280-4E5D-9F71-D97F27B9DD0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scenarios", "Scenarios", "{FF8D400C-BE53-4830-85CD-ADEEB203BD55}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Use Cases\P-000-Scenario.docx = Documentation\Use Cases\P-000-Scenario.docx
+		Documentation\Use Cases\P-005-Scenario.docx = Documentation\Use Cases\P-005-Scenario.docx
+		Documentation\Use Cases\P-006-Scenario.docx = Documentation\Use Cases\P-006-Scenario.docx
+		Documentation\Use Cases\P-010-Scenario.docx = Documentation\Use Cases\P-010-Scenario.docx
+		Documentation\Use Cases\P-015-Scenario.docx = Documentation\Use Cases\P-015-Scenario.docx
+		Documentation\Use Cases\P-020-Scenario.docx = Documentation\Use Cases\P-020-Scenario.docx
+		Documentation\Use Cases\P-025-Scenario.docx = Documentation\Use Cases\P-025-Scenario.docx
+		Documentation\Use Cases\P-030-Scenario.docx = Documentation\Use Cases\P-030-Scenario.docx
+		Documentation\Use Cases\P-035-Scenario.docx = Documentation\Use Cases\P-035-Scenario.docx
+		Documentation\Use Cases\S-000-Scenario.docx = Documentation\Use Cases\S-000-Scenario.docx
+		Documentation\Use Cases\UX-000-Scenario.docx = Documentation\Use Cases\UX-000-Scenario.docx
+		Documentation\Use Cases\UX-005-Scenario.docx = Documentation\Use Cases\UX-005-Scenario.docx
+		Documentation\Use Cases\UX-010-Scenario.docx = Documentation\Use Cases\UX-010-Scenario.docx
+		Documentation\Use Cases\UX-015-Scenario.docx = Documentation\Use Cases\UX-015-Scenario.docx
+		Documentation\Use Cases\UX-020-Scenario.docx = Documentation\Use Cases\UX-020-Scenario.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sequences", "Sequences", "{363E7170-D751-4EF3-A61D-70F2C40B9896}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Use Cases\P-000-Sequence.vsdx = Documentation\Use Cases\P-000-Sequence.vsdx
+		Documentation\Use Cases\P-005-Sequence.vsdx = Documentation\Use Cases\P-005-Sequence.vsdx
+		Documentation\Use Cases\P-006-Sequence.vsdx = Documentation\Use Cases\P-006-Sequence.vsdx
+		Documentation\Use Cases\P-010-Sequence.vsdx = Documentation\Use Cases\P-010-Sequence.vsdx
+		Documentation\Use Cases\P-015-Sequence.vsdx = Documentation\Use Cases\P-015-Sequence.vsdx
+		Documentation\Use Cases\P-020-Sequence.vsdx = Documentation\Use Cases\P-020-Sequence.vsdx
+		Documentation\Use Cases\P-025-Sequence.vsdx = Documentation\Use Cases\P-025-Sequence.vsdx
+		Documentation\Use Cases\P-030-Sequence.vsdx = Documentation\Use Cases\P-030-Sequence.vsdx
+		Documentation\Use Cases\P-035-Sequence.vsdx = Documentation\Use Cases\P-035-Sequence.vsdx
+		Documentation\Use Cases\S-000-Sequence.vsdx = Documentation\Use Cases\S-000-Sequence.vsdx
+		Documentation\Use Cases\UX-000-Sequence.vsdx = Documentation\Use Cases\UX-000-Sequence.vsdx
+		Documentation\Use Cases\UX-005-Sequence.vsdx = Documentation\Use Cases\UX-005-Sequence.vsdx
+		Documentation\Use Cases\UX-010-Sequence.vsdx = Documentation\Use Cases\UX-010-Sequence.vsdx
+		Documentation\Use Cases\UX-015-Sequence.vsdx = Documentation\Use Cases\UX-015-Sequence.vsdx
+		Documentation\Use Cases\UX-020-Sequence.vsdx = Documentation\Use Cases\UX-020-Sequence.vsdx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +132,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3149403E-A04C-4A51-8E5F-4013D830C656} = {FB74B73B-2909-4207-AF8D-62598FDDB4A2}
+		{74E04EE8-2F66-4AB5-A7CC-96CD3236CC0C} = {FB74B73B-2909-4207-AF8D-62598FDDB4A2}
+		{D704F1F3-1DA7-41DB-BF66-5EFCDF063B8E} = {74E04EE8-2F66-4AB5-A7CC-96CD3236CC0C}
+		{36AD38B5-B0DC-4F5C-AE78-341AAA94C5E4} = {FB74B73B-2909-4207-AF8D-62598FDDB4A2}
+		{6D8F54DE-D280-4E5D-9F71-D97F27B9DD0B} = {FB74B73B-2909-4207-AF8D-62598FDDB4A2}
+		{FF8D400C-BE53-4830-85CD-ADEEB203BD55} = {6D8F54DE-D280-4E5D-9F71-D97F27B9DD0B}
+		{363E7170-D751-4EF3-A61D-70F2C40B9896} = {6D8F54DE-D280-4E5D-9F71-D97F27B9DD0B}
 	EndGlobalSection
 EndGlobal

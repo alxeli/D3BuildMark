@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
+    /// <summary>
+    /// Stores the name and description of an item
+    /// Used by: Hero, BuildMark
+    /// Uses: BuildMark
+    /// </summary>
+
     public class BuildSnapshot
     {
         private string m_name;

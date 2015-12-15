@@ -1,0 +1,1 @@
+ClassDiagram3.0.vsdx - changed BuildSnapshot Item[10] to Dictionary<string, Item>

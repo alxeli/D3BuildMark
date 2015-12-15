@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
@@ -14,6 +11,11 @@ namespace BusinessObjects
         public Profile()
         {
             m_battle_tag = null;
+            m_heroes = new List<Hero>();
+        }
+        public Profile(string battle_tag)
+        {
+            m_battle_tag = battle_tag;
             m_heroes = new List<Hero>();
         }
 

@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
+    /// <summary>
+    /// Stores the name and description of a skill.
+    /// Used by: BuildSnapshot.
+    /// Uses: n/a.
+    /// </summary>
+
     public class Skill
     {
         private string m_name;
