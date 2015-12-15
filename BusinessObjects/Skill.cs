@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessObjects
+{
+    public class Skill
+    {
+        private string m_name;
+        private string m_description;
+
+        public Skill()
+        {
+            m_name = null;
+            m_description = null;
+        }
+
+        public string Name
+        {
+            get { return m_name; }
+            set { m_name = value; }
+        }
+        public string Description
+        {
+            get { return m_description; }
+            set { m_description = value; }
+        }
+    }
+}
