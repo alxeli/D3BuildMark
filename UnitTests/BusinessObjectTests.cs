@@ -39,6 +39,7 @@ namespace UnitTests
         }
 
         //Skill
+        [TestMethod]
         public void TestSkillDefaultConstructor()
         {
             string expected_name = null;
@@ -62,8 +63,130 @@ namespace UnitTests
         }
 
         //BuildSnapshot
+        [TestMethod]
+        public void TestBuildSnapshotDefaultConstructor()
+        {
+            string expected_name = null;
+            Dictionary<string, Item> expected_items = new Dictionary<string, Item>();
+            expected_items.Add("Head", null);
+            expected_items.Add("Neck", null);
+            expected_items.Add("Shoulders", null);
+            expected_items.Add("Gloves", null);
+            expected_items.Add("Chest", null);
+            expected_items.Add("Bracers", null);
+            expected_items.Add("Belt", null);
+            expected_items.Add("LeftRing", null);
+            expected_items.Add("RightRing", null);
+            expected_items.Add("Pants", null);
+            expected_items.Add("Boots", null);
+            expected_items.Add("LeftHand", null);
+            expected_items.Add("RightHand", null);
+            Skill[] expected_skills = new Skill[10];
+
+            BuildSnapshot buildsnapshot = new BuildSnapshot();
+
+            Assert.AreEqual(expected_name, buildsnapshot.Name);
+            Assert.IsNotNull(buildsnapshot.BuildMark);
+            Assert.IsNull(buildsnapshot.Items["Head"]);
+            Assert.IsNull(buildsnapshot.Items["Neck"]);
+            Assert.IsNull(buildsnapshot.Items["Shoulders"]);
+            Assert.IsNull(buildsnapshot.Items["Gloves"]);
+            Assert.IsNull(buildsnapshot.Items["Chest"]);
+            Assert.IsNull(buildsnapshot.Items["Bracers"]);
+            Assert.IsNull(buildsnapshot.Items["Belt"]);
+            Assert.IsNull(buildsnapshot.Items["LeftRing"]);
+            Assert.IsNull(buildsnapshot.Items["RightRing"]);
+            Assert.IsNull(buildsnapshot.Items["Pants"]);
+            Assert.IsNull(buildsnapshot.Items["Boots"]);
+            Assert.IsNull(buildsnapshot.Items["LeftHand"]);
+            Assert.IsNull(buildsnapshot.Items["RightHand"]);
+            foreach (Skill skill in buildsnapshot.Skills)
+            {
+                Assert.IsNotNull(skill);
+            }
+        }
+        [TestMethod]
+        public void TestBuildSnapshotOverloadedConstructor()
+        {
+            string expected_name = "Holy EP Speed Ulianas";
+            Dictionary<string, Item> expected_items = new Dictionary<string, Item>();
+            expected_items.Add("Head", null);
+            expected_items.Add("Neck", null);
+            expected_items.Add("Shoulders", null);
+            expected_items.Add("Gloves", null);
+            expected_items.Add("Chest", null);
+            expected_items.Add("Bracers", null);
+            expected_items.Add("Belt", null);
+            expected_items.Add("LeftRing", null);
+            expected_items.Add("RightRing", null);
+            expected_items.Add("Pants", null);
+            expected_items.Add("Boots", null);
+            expected_items.Add("LeftHand", null);
+            expected_items.Add("RightHand", null);
+            Skill[] expected_skills = new Skill[10];
+
+            BuildSnapshot buildsnapshot = new BuildSnapshot(expected_name);
+
+            Assert.AreEqual(expected_name, buildsnapshot.Name);
+            Assert.IsNotNull(buildsnapshot.BuildMark);
+            Assert.IsNull(buildsnapshot.Items["Head"]);
+            Assert.IsNull(buildsnapshot.Items["Neck"]);
+            Assert.IsNull(buildsnapshot.Items["Shoulders"]);
+            Assert.IsNull(buildsnapshot.Items["Gloves"]);
+            Assert.IsNull(buildsnapshot.Items["Chest"]);
+            Assert.IsNull(buildsnapshot.Items["Bracers"]);
+            Assert.IsNull(buildsnapshot.Items["Belt"]);
+            Assert.IsNull(buildsnapshot.Items["LeftRing"]);
+            Assert.IsNull(buildsnapshot.Items["RightRing"]);
+            Assert.IsNull(buildsnapshot.Items["Pants"]);
+            Assert.IsNull(buildsnapshot.Items["Boots"]);
+            Assert.IsNull(buildsnapshot.Items["LeftHand"]);
+            Assert.IsNull(buildsnapshot.Items["RightHand"]);
+            foreach (Skill skill in buildsnapshot.Skills)
+            {
+                Assert.IsNotNull(skill);
+            }
+        }
 
         //BuildMark
+        [TestMethod]
+        public void TestBuildMarkDefaultConstructor()
+        {
+            string expected_score = null;
+            string expected_damage = null;
+            string expected_toughness = null;
+            string expected_recovery = null;
+            bool expected_is_calculated = false;
+            DateTime expected_date_last_calculated = new DateTime(2015, 12, 14, 15, 49, 15, DateTimeKind.Local);
+
+            BuildMark buildmark = new BuildMark();
+
+            Assert.AreEqual(expected_score, buildmark.Score);
+            Assert.AreEqual(expected_damage, buildmark.Damage);
+            Assert.AreEqual(expected_toughness, buildmark.Toughness);
+            Assert.AreEqual(expected_recovery, buildmark.Recovery);
+            Assert.AreEqual(expected_is_calculated, buildmark.isCalculated);
+            Assert.AreEqual(expected_date_last_calculated, buildmark.DateLastCalculated);
+        }
+        [TestMethod]
+        public void TestBuildMarkOverloadedConstructor()
+        {
+            string expected_score = null;
+            string expected_damage = "1,200,000";
+            string expected_toughness = "65,000,000";
+            string expected_recovery = "2,500,000";
+            bool expected_is_calculated = false;
+            DateTime expected_date_last_calculated = new DateTime(2015, 12, 14, 15, 49, 15, DateTimeKind.Local);
+
+            BuildMark buildmark = new BuildMark(expected_damage, expected_toughness, expected_recovery);
+
+            Assert.AreEqual(expected_score, buildmark.Score);
+            Assert.AreEqual(expected_damage, buildmark.Damage);
+            Assert.AreEqual(expected_toughness, buildmark.Toughness);
+            Assert.AreEqual(expected_recovery, buildmark.Recovery);
+            Assert.AreEqual(expected_is_calculated, buildmark.isCalculated);
+            Assert.AreEqual(expected_date_last_calculated, buildmark.DateLastCalculated);
+        }
 
         //Hero
         [TestMethod]

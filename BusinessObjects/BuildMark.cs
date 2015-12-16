@@ -23,6 +23,14 @@ namespace BusinessObjects
             m_recovery = null;
             m_is_calculated = false;
         }
+        public BuildMark(string damage, string toughness, string recovery)
+        {
+            m_score = null;
+            m_damage = damage;
+            m_toughness = toughness;
+            m_recovery = recovery;
+            m_is_calculated = false;
+        }
 
         public void Calculate()
         {
