@@ -22,6 +22,11 @@ namespace BusinessObjects
             m_name = null;
             m_description = null;
         }
+        public Skill(string name, string description)
+        {
+            m_name = name;
+            m_description = description;
+        }
 
         public string Name
         {

@@ -26,6 +26,7 @@ namespace BusinessObjects
 
         public void Calculate()
         {
+            //TODO: implement benchmark algorithm
 
             //set the date upon completion of calculation
             m_date_last_calculated = DateTime.Now;

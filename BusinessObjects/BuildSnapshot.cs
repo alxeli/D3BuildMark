@@ -5,7 +5,7 @@ namespace BusinessObjects
 {
     /// <summary>
     /// Stores the name and description of an item
-    /// Used by: Hero, BuildMark
+    /// Used by: Hero
     /// Uses: BuildMark
     /// </summary>
 

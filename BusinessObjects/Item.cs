@@ -22,6 +22,11 @@ namespace BusinessObjects
             m_name = null;
             m_attributes = new List<string>();
         }
+        public Item(string name, List<string> attributes)
+        {
+            m_name = name;
+            m_attributes = attributes;
+        }
 
         public string Name
         {
