@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using DataManagement;
 using BusinessObjects;
 
 namespace UnitTests
@@ -10,18 +11,24 @@ namespace UnitTests
         [TestMethod]
         public void TestApiManagerRetrieveProfileThatExists()
         {
-            ApiManager manager = new ApiManager();
-            Profile profile;
+            //ApiManager manager = new ApiManager();
+            Profile profile = new Profile();
+            profile.BattleTag = "butchiebags#1483";
 
-            Assert.AreEqual(true, manager.RetrieveProfile(out profile));
+            Assert.IsTrue(ApiManager.RetrieveProfile(ref profile));
+            Assert.IsNotNull(profile.BattleTag);
+            Assert.IsTrue(profile.Heroes.Count > 0);
         }
         [TestMethod]
         public void TestApiManagerRetrieveProfileThatDoesNotExist()
         {
-            ApiManager manager = new ApiManager();
-            Profile profile;
+            //ApiManager manager = new ApiManager();
+            Profile profile = new Profile();
+            profile.BattleTag = "invalid";
 
-            Assert.AreEqual(true, manager.RetrieveProfile(out profile));
+            Assert.IsFalse(ApiManager.RetrieveProfile(ref profile));
+            Assert.IsNotNull(profile.BattleTag);
+            Assert.IsTrue(profile.Heroes.Count == 0);
         }
     }
 }

@@ -111,6 +111,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sequences", "Sequences", "{
 		Documentation\Use Cases\UX-020-Sequence.vsdx = Documentation\Use Cases\UX-020-Sequence.vsdx
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "ApiManager\DataManagement.csproj", "{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{351FE816-BCD9-42A7-B701-B778DA199DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{351FE816-BCD9-42A7-B701-B778DA199DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{351FE816-BCD9-42A7-B701-B778DA199DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
