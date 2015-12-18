@@ -113,6 +113,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sequences", "Sequences", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "ApiManager\DataManagement.csproj", "{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4C03C122-2B14-45E3-A7E1-54E4D10DEE1C}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Database\ER1.0.vsdx = Documentation\Database\ER1.0.vsdx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,5 +152,6 @@ Global
 		{6D8F54DE-D280-4E5D-9F71-D97F27B9DD0B} = {FB74B73B-2909-4207-AF8D-62598FDDB4A2}
 		{FF8D400C-BE53-4830-85CD-ADEEB203BD55} = {6D8F54DE-D280-4E5D-9F71-D97F27B9DD0B}
 		{363E7170-D751-4EF3-A61D-70F2C40B9896} = {6D8F54DE-D280-4E5D-9F71-D97F27B9DD0B}
+		{4C03C122-2B14-45E3-A7E1-54E4D10DEE1C} = {FB74B73B-2909-4207-AF8D-62598FDDB4A2}
 	EndGlobalSection
 EndGlobal

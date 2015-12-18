@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiManager.cs" />
-    <Compile Include="ApiTestApp.cs" />
+    <Compile Include="DataMgmtTestApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

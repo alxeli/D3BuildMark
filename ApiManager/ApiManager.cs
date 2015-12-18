@@ -34,6 +34,7 @@ namespace DataManagement
             D3Api.ApiKey = API_KEY;
         }
 
+        //
         public static bool RetrieveProfile(ref Profile profile)
         {
             try
