@@ -73,6 +73,7 @@ CREATE TABLE BuildSnapshot
 	BuildMarkID		int				CONSTRAINT	BuildMark_FK_BS		REFERENCES BuildMark(BuildMarkID),
 	SkillListID		int				CONSTRAINT	SkillList_FK_BS		REFERENCES SkillList(SkillListID),
 	ItemListID		int				CONSTRAINT	ItemList_FK_BS		REFERENCES ItemList(ItemListID),
+	BuildName		varchar(30)		NOT NULL
 );
 
 --now add that BuildMark foreign key...

@@ -118,6 +118,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4C
 		Documentation\Database\dbCreate.sql = Documentation\Database\dbCreate.sql
 		Documentation\Database\dbStoredProcs.sql = Documentation\Database\dbStoredProcs.sql
 		Documentation\Database\ER1.0.vsdx = Documentation\Database\ER1.0.vsdx
+		SelectUsers.sql = SelectUsers.sql
 	EndProjectSection
 EndProject
 Global
