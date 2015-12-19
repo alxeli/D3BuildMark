@@ -19,10 +19,10 @@ namespace DataManagement
         }
         static void TestDisplayRetrieveProfile()
         {
-            //ApiManager manager = new ApiManager();
+            ApiManager manager = ApiManager.GetInstance();
             Profile test_profile = new Profile(BATTLETAG);
 
-            ApiManager.RetrieveProfile(ref test_profile);
+            manager.RetrieveProfile(ref test_profile);
             
             Console.WriteLine(test_profile.BattleTag + "\n");
             foreach (Hero h in test_profile.Heroes)

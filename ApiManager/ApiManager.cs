@@ -22,32 +22,59 @@ using ZTn.Bnet.Portable.Windows;
 
 namespace DataManagement
 {
-    public static class ApiManager
+    public class ApiManager
     {
+        private static ApiManager _instance = null;
+        private static object _lock = new object();
+        private object _api_sync = new object();
+
         //my api key for the battle.net api
         private const string API_KEY = "gsy79dc8h2qjpy82k23kb5htysmyrw6w";
 
-        static ApiManager()
+        private ApiManager()
         {
             RegisterPcl.Register();
             D3Api.DataProvider = new CacheableDataProvider(new HttpRequestDataProvider());
             D3Api.ApiKey = API_KEY;
         }
 
+        public static ApiManager GetInstance()
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new ApiManager();
+                    }
+                }
+            }
+            return _instance;
+        }
+
         //
-        public static bool RetrieveProfile(ref Profile profile)
+        public bool RetrieveProfile(ref Profile profile)
         {
             try
             {
-                //API Career retrieval
-                Career career = Career.CreateFromBattleTag(new ZTn.BNet.BattleNet.BattleTag(profile.BattleTag));
+                Career career = null;
+
+                lock (_api_sync)
+                {
+                    //API Career retrieval
+                    career = Career.CreateFromBattleTag(new ZTn.BNet.BattleNet.BattleTag(profile.BattleTag));
+                }
 
                 //clear existing profile heroes to eliminate duplicates
                 profile.Heroes.Clear();
 
-                foreach (ZTn.BNet.D3.Heroes.HeroSummary hs in career.Heroes)
+                if (career != null)
                 {
-                    profile.Heroes.Add(new Hero(hs.Name, hs.HeroClass.ToString()));
+                    foreach (ZTn.BNet.D3.Heroes.HeroSummary hs in career.Heroes)
+                    {
+                        profile.Heroes.Add(new Hero(hs.Name, hs.HeroClass.ToString()));
+                    }
                 }
             }
             catch (FileNotInCacheException)

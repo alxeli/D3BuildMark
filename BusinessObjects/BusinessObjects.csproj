@@ -41,9 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildMark.cs" />
-    <Compile Include="BuildMarkManager.cs" />
     <Compile Include="BuildSnapshot.cs" />
-    <Compile Include="DBManager.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Profile.cs" />
