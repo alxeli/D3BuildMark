@@ -1,11 +1,11 @@
 Use D3BuildMark;
 GO
 
-IF OBJECT_ID('spAddUserProfile') IS NOT NULL
-DROP PROC spAddUserProfile
+IF OBJECT_ID('spCreateUserProfile') IS NOT NULL
+DROP PROC spCreateUserProfile
 GO
 
-CREATE PROC spAddUserProfile
+CREATE PROC spCreateUserProfile
 @UserName		varchar(40),
 @Password		varchar(40),
 @Email			varchar(40),

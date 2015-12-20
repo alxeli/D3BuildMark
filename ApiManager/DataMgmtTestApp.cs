@@ -13,16 +13,30 @@ namespace DataManagement
 
         static void Main(string[] args)
         {
-            TestDisplayRetrieveProfile();
+            //TestDisplayRetrieveProfile();
+            TestCreateUserProfile();
 
             Console.Read();
         }
+        static void TestCreateUserProfile()
+        {
+            DBManager db_manager = new DBManager();
+
+            if(db_manager.CreateUser("butchiebags", "1234567", "butchiebags@gmail.com", "butchiebags#1483"))
+            {
+                Console.WriteLine("TestCreateUserProfile Succeeded");
+            }
+            else
+            {
+                Console.WriteLine("TestCreateUserProfile Failed");
+            }
+        }
         static void TestDisplayRetrieveProfile()
         {
-            ApiManager manager = ApiManager.GetInstance();
+            ApiManager api_manager = ApiManager.GetInstance();
             Profile test_profile = new Profile(BATTLETAG);
 
-            manager.RetrieveProfile(ref test_profile);
+            api_manager.RetrieveProfile(ref test_profile);
             
             Console.WriteLine(test_profile.BattleTag + "\n");
             foreach (Hero h in test_profile.Heroes)
