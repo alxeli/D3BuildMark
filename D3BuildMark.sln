@@ -119,6 +119,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4C
 		SelectUsers.sql = SelectUsers.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3BuildMarkSite", "D3BuildMarkSite\D3BuildMarkSite.csproj", "{96EDCB0B-27FF-4FDE-AF08-F354B02EFD00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,6 +139,10 @@ Global
 		{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96EDCB0B-27FF-4FDE-AF08-F354B02EFD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96EDCB0B-27FF-4FDE-AF08-F354B02EFD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96EDCB0B-27FF-4FDE-AF08-F354B02EFD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96EDCB0B-27FF-4FDE-AF08-F354B02EFD00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
