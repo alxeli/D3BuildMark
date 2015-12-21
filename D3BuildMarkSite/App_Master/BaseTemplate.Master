@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BaseTemplate.master.cs" Inherits="D3BuildMarkSite.App_Master.BaseTemplate" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>D3 BuildMark</title>
+    <asp:ContentPlaceHolder ID="mpHead" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="main_body">
+            <header id="mpHeader">
+                <asp:ContentPlaceHolder ID="cHeader" runat="server">
+                    <h1>Master Page Header Default</h1>
+                </asp:ContentPlaceHolder>
+            </header>
+
+        
+            <nav id="mpNav">
+                <asp:ContentPlaceHolder ID="cNav" runat="server">
+                    <h1>Master Page Nav Default</h1>
+                </asp:ContentPlaceHolder>
+            </nav>
+
+        
+            <main id="mpContent">
+                <asp:ContentPlaceHolder ID="cContent" runat="server">
+                    <h1>Master Page Content Default</h1>
+                </asp:ContentPlaceHolder>
+            </main>
+
+        
+            <footer id="mpFooter">
+                <asp:ContentPlaceHolder ID="cFooter" runat="server">
+                    <h1>Master Page Footer Default</h1>
+                </asp:ContentPlaceHolder>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

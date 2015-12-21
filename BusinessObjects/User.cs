@@ -8,6 +8,7 @@ namespace BusinessObjects
 {
     public class User
     {
+        private Guid m_id;
         private string m_name;
         private Profile m_profile;
 
@@ -22,6 +23,11 @@ namespace BusinessObjects
             m_profile = new Profile();
         }
         
+        public Guid ID
+        {
+            get { return m_id; }
+            set { m_id = value; }
+        }
         public string Name
         {
             get { return m_name; }
