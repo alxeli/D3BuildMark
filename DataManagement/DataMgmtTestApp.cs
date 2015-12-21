@@ -13,8 +13,8 @@ namespace DataManagement
 
         static void Main(string[] args)
         {
-            //TestDisplayRetrieveProfile();
-            TestCreateUserProfile();
+            TestDisplayRetrieveProfile();
+            //TestCreateUserProfile();
 
             Console.Read();
         }

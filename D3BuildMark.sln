@@ -109,7 +109,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sequences", "Sequences", "{
 		Documentation\Use Cases\UX-020-Sequence.vsdx = Documentation\Use Cases\UX-020-Sequence.vsdx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "ApiManager\DataManagement.csproj", "{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManagement\DataManagement.csproj", "{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4C03C122-2B14-45E3-A7E1-54E4D10DEE1C}"
 	ProjectSection(SolutionItems) = preProject

@@ -7,8 +7,8 @@
     <ProjectGuid>{18A0C05D-A76E-4680-B6B7-20DA82BDB35C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApiManager</RootNamespace>
-    <AssemblyName>ApiManager</AssemblyName>
+    <RootNamespace>DataManagement</RootNamespace>
+    <AssemblyName>DataManagement</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
