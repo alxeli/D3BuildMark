@@ -10,11 +10,13 @@ namespace DataManagement
     class ApiTestApp
     {
         const string BATTLETAG = "butchiebags#1483";
+        const string GUID = "4647775C-3D5D-4391-AF90-B2314460F86E";
 
         static void Main(string[] args)
         {
-            TestDisplayRetrieveProfile();
+            //TestDisplayRetrieveProfile();
             //TestCreateUserProfile();
+            TestCreateHero();
 
             Console.Read();
         }
@@ -22,13 +24,32 @@ namespace DataManagement
         {
             DBManager db_manager = new DBManager();
 
-            if(db_manager.CreateUser("butchiebags", "1234567", "butchiebags@gmail.com", "butchiebags#1483"))
+            User user = new User("butchiebags");
+            user.GUID = new Guid(GUID);
+
+            if (db_manager.CreateUser(user))
             {
                 Console.WriteLine("TestCreateUserProfile Succeeded");
             }
             else
             {
                 Console.WriteLine("TestCreateUserProfile Failed");
+            }
+        }
+        static void TestCreateHero()
+        {
+            DBManager db_manager = new DBManager();
+
+            User user = new User(new Guid(GUID), "butchiebags");
+            user.Profile.Heroes.Add(new Hero("Timmons", "Monk"));
+
+            if (db_manager.CreateHero(user, user.Profile.Heroes[0]))
+            {
+                Console.WriteLine("TestCreateHero Succeeded");
+            }
+            else
+            {
+                Console.WriteLine("TestCreateHero Failed");
             }
         }
         static void TestDisplayRetrieveProfile()

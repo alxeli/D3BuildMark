@@ -22,8 +22,14 @@ namespace BusinessObjects
             m_name = name;
             m_profile = new Profile();
         }
-        
-        public Guid ID
+        public User(Guid id, string name)
+        {
+            m_id = id;
+            m_name = name;
+            m_profile = new Profile();
+        }
+
+        public Guid GUID
         {
             get { return m_id; }
             set { m_id = value; }

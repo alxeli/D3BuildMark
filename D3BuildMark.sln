@@ -114,8 +114,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4C03C122-2B14-45E3-A7E1-54E4D10DEE1C}"
 	ProjectSection(SolutionItems) = preProject
 		Documentation\Database\dbCreate.sql = Documentation\Database\dbCreate.sql
+		dbMembCon.sql = dbMembCon.sql
 		Documentation\Database\dbStoredProcs.sql = Documentation\Database\dbStoredProcs.sql
 		Documentation\Database\ER1.0.vsdx = Documentation\Database\ER1.0.vsdx
+		Documentation\Database\ER2.0.vsdx = Documentation\Database\ER2.0.vsdx
+		regsql.bat = regsql.bat
 		SelectUsers.sql = SelectUsers.sql
 	EndProjectSection
 EndProject

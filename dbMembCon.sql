@@ -1,0 +1,10 @@
+﻿USE master;
+GO
+
+USE D3BuildMark;
+
+ALTER TABLE UserProfile
+ADD CONSTRAINT UserGUID_FK_aU
+FOREIGN KEY (UserGUID)
+REFERENCES aspnet_Users(UserId)
+GO

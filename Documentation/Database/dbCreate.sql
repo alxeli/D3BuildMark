@@ -67,9 +67,26 @@ CREATE TABLE BuildMark
 	Date			DateTime		NOT NULL
 );
 
+CREATE TABLE UserProfile
+(
+	UserID			int				CONSTRAINT	User_PK				PRIMARY KEY IDENTITY,
+	UserGUID		uniqueidentifier, --CONSTRAINT	UserGUID_FK_aU		REFERENCES aspnet_Users(UserId), (add later in dbMembCon.sql)
+	UserName		varchar(40)		NOT NULL	CONSTRAINT UserName_UNQ		UNIQUE(UserName),
+	Battletag		varchar(40)
+);
+
+CREATE TABLE Hero
+(
+	HeroID			int				CONSTRAINT	Hero_PK				PRIMARY KEY IDENTITY,
+	UserID			int				CONSTRAINT	User_FK_UP			REFERENCES UserProfile(UserID),
+	HeroName		varchar(12)		NOT NULL,
+	HeroClass		varchar(12)		NOT NULL
+);
+
 CREATE TABLE BuildSnapshot
 (
 	BuildSnapshotID	int				CONSTRAINT	BuildSnapshot_PK	PRIMARY KEY IDENTITY,
+	HeroID			int				CONSTRAINT	Hero_FK_BS			REFERENCES Hero(HeroID),
 	BuildMarkID		int				CONSTRAINT	BuildMark_FK_BS		REFERENCES BuildMark(BuildMarkID),
 	SkillListID		int				CONSTRAINT	SkillList_FK_BS		REFERENCES SkillList(SkillListID),
 	ItemListID		int				CONSTRAINT	ItemList_FK_BS		REFERENCES ItemList(ItemListID),
@@ -87,23 +104,6 @@ FOREIGN KEY (BuildSnapshotID)
 REFERENCES BuildSnapshot(BuildSnapshotID)
 GO
 
-CREATE TABLE Hero
-(
-	HeroID			int				CONSTRAINT	Hero_PK				PRIMARY KEY IDENTITY,
-	BuildSnapshotID	int				CONSTRAINT	BuildSnapshot_FK_H 	REFERENCES BuildSnapshot(BuildSnapshotID),
-	HeroName		varchar(12)		NOT NULL,
-	HeroClass		varchar(12)		NOT NULL
-);
-
-CREATE TABLE UserProfile
-(
-	UserID			int				CONSTRAINT	User_PK				PRIMARY KEY IDENTITY,
-	HeroID			int				CONSTRAINT	Hero_FK_UP			REFERENCES Hero(HeroID),
-	UserName		varchar(40)		NOT NULL,
-	Password		varchar(40)		NOT NULL,
-	Email			varchar(40)		NOT NULL,
-	Battletag		varchar(40)		NOT NULL
-);
 
 Create Role DBManagement;
 GO
