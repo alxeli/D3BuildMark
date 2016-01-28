@@ -118,8 +118,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4C
 		Documentation\Database\dbStoredProcs.sql = Documentation\Database\dbStoredProcs.sql
 		Documentation\Database\ER1.0.vsdx = Documentation\Database\ER1.0.vsdx
 		Documentation\Database\ER2.0.vsdx = Documentation\Database\ER2.0.vsdx
-		regsql.bat = regsql.bat
-		SelectUsers.sql = SelectUsers.sql
+		SelectUsersAndHeroes.sql = SelectUsersAndHeroes.sql
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3BuildMarkSite", "D3BuildMarkSite\D3BuildMarkSite.csproj", "{96EDCB0B-27FF-4FDE-AF08-F354B02EFD00}"

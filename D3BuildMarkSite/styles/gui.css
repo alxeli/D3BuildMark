@@ -1,0 +1,90 @@
+﻿body {
+    margin:0;
+    padding:0;
+}
+
+.snapshot{
+    border: solid #000000 1px;
+    margin: 1em;
+    padding: 1em;
+    width: 20em;
+    height: auto;
+}
+
+.item{
+    border: solid #D0D0D0 1px;
+    margin: .5em;
+}
+
+.images{
+    border: solid #000000 1px;
+    width: 100%;
+    height: auto;
+}
+
+.head{
+
+}
+
+.neck{
+
+}
+
+.shoulders{
+
+}
+
+.gloves{
+
+}
+
+.chest{
+
+}
+
+.bracers{
+
+}
+
+.belt{
+
+}
+
+.leftring{
+
+}
+
+.rightring{
+
+}
+
+.pants{
+
+}
+
+.boots{
+
+}
+
+.lefthand{
+
+}
+
+.righthand{
+
+}
+
+.left{
+    display: inline-block;
+    float: left;
+    border: solid #000000 1px;
+    width: 70%;
+    height: auto;
+}
+
+.right{
+    float: right;
+    border: solid #000000 1px;
+    width: 25%;
+    height: auto;
+}

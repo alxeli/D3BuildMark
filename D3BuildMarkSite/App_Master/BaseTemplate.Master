@@ -2,28 +2,32 @@
 
 <!DOCTYPE html>
 
+<link href="../styles/styles.css" rel="stylesheet" />
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>D3 BuildMark</title>
     <asp:ContentPlaceHolder ID="mpHead" runat="server">
-
+        <title>D3 BuildMark</title>
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="main_body">
+        <div class="main_body">
             <header id="mpHeader">
                 <asp:ContentPlaceHolder ID="cHeader" runat="server">
-                    <h1>Master Page Header Default</h1>
+                    <div class="header">
+                        <h1 style="display: inline-block;">D3 BuildMark</h1>
+                        <asp:TextBox ID="uxSearch" CssClass="searchbox" runat="server"></asp:TextBox>
+                    </div>
                 </asp:ContentPlaceHolder>
             </header>
 
         
-            <nav id="mpNav">
+            <%--<nav id="mpNav">
                 <asp:ContentPlaceHolder ID="cNav" runat="server">
                     <h1>Master Page Nav Default</h1>
                 </asp:ContentPlaceHolder>
-            </nav>
+            </nav>--%>
 
         
             <main id="mpContent">
@@ -31,14 +35,15 @@
                     <h1>Master Page Content Default</h1>
                 </asp:ContentPlaceHolder>
             </main>
-
+            <div class="push"></div>
         
             <footer id="mpFooter">
                 <asp:ContentPlaceHolder ID="cFooter" runat="server">
-                    <h1>Master Page Footer Default</h1>
+                    <asp:literal runat="server">AC Software™ 2016</asp:literal>
                 </asp:ContentPlaceHolder>
             </footer>
         </div>
+
     </form>
 </body>
 </html>

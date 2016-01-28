@@ -71,6 +71,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Buildview.aspx" />
+    <Content Include="Controls\uxBuildSnapshotView.ascx" />
     <Content Include="default.aspx" />
     <Content Include="packages.config" />
     <Content Include="App_Master\BaseTemplate.Master" />
@@ -82,6 +84,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="styles\gui.css" />
+    <Content Include="styles\styles.css" />
     <Content Include="Users\Login.aspx" />
     <Content Include="Users\Register.aspx" />
     <Content Include="Web.config">
@@ -95,6 +99,20 @@
     </Compile>
     <Compile Include="App_Master\BaseTemplate.Master.designer.cs">
       <DependentUpon>BaseTemplate.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Buildview.aspx.cs">
+      <DependentUpon>Buildview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buildview.aspx.designer.cs">
+      <DependentUpon>Buildview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uxBuildSnapshotView.ascx.cs">
+      <DependentUpon>uxBuildSnapshotView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\uxBuildSnapshotView.ascx.designer.cs">
+      <DependentUpon>uxBuildSnapshotView.ascx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
