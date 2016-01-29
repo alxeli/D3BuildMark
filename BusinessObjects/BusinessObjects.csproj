@@ -30,6 +30,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BNet API by ZTn">
+      <HintPath>..\..\..\D3Stuff\ZTN Sept 2015\D3-API-by-ZTn-master\D3 API by ZTn\bin\Portable\Release\BNet API by ZTn.dll</HintPath>
+    </Reference>
+    <Reference Include="D3 API by ZTn">
+      <HintPath>..\..\..\D3Stuff\ZTN Sept 2015\D3-API-by-ZTn-master\D3 API by ZTn\bin\Portable\Release\D3 API by ZTn.dll</HintPath>
+    </Reference>
+    <Reference Include="D3 Calculator Library by ZTn">
+      <HintPath>..\..\..\D3Stuff\ZTN Sept 2015\D3-API-by-ZTn-master\D3 Calculator Library by ZTn\bin\Portable\Release\D3 Calculator Library by ZTn.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\D3Stuff\ZTN Sept 2015\D3-API-by-ZTn-master\D3 API by ZTn\bin\Portable\Release\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PCL Adapter">
+      <HintPath>..\..\..\D3Stuff\ZTN Sept 2015\D3-API-by-ZTn-master\D3 API by ZTn\bin\Portable\Release\PCL Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="PCL Adapter for Windows">
+      <HintPath>..\..\..\D3Stuff\ZTN Sept 2015\D3-API-by-ZTn-master\PCL Adapter for Windows\bin\Release\PCL Adapter for Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

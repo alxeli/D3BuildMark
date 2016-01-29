@@ -18,6 +18,9 @@ CREATE TABLE Skill
 	Name			varchar(60)		NOT NULL,
 	Description		varchar(200)	NOT NULL
 );
+ALTER TABLE Skill
+	ADD CONSTRAINT unique_S UNIQUE(Name, Description);
+
 CREATE TABLE SkillList
 (
 	SkillListID		int				CONSTRAINT	SkillList_PK		PRIMARY KEY IDENTITY,
@@ -39,6 +42,10 @@ CREATE TABLE Item
 	Name			varchar(60)		NOT NULL,
 	Attributes		varchar(500)	NOT NULL
 );
+
+ALTER TABLE Item
+	ADD CONSTRAINT unique_I UNIQUE(Name, Attributes);
+
 CREATE TABLE ItemList
 (
 	ItemListID		int				CONSTRAINT	ItemList_PK		PRIMARY KEY IDENTITY,

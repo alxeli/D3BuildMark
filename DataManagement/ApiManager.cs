@@ -124,21 +124,23 @@ namespace DataManagement
                         }
                     }
 
-                    //extract build information and store in the BuildSnapshot
-                    snapshot.Items["Head"] = new BusinessObjects.Item(t_hero.Items.Head.Name);
-                    snapshot.Items["Neck"] = new BusinessObjects.Item(t_hero.Items.Neck.Name);
-                    snapshot.Items["Shoulders"] = new BusinessObjects.Item(t_hero.Items.Shoulders.Name);
-                    snapshot.Items["Gloves"] = new BusinessObjects.Item(t_hero.Items.Hands.Name);
-                    snapshot.Items["Chest"] = new BusinessObjects.Item(t_hero.Items.Torso.Name);
-                    snapshot.Items["Bracers"] = new BusinessObjects.Item(t_hero.Items.Bracers.Name);
-                    snapshot.Items["Belt"] = new BusinessObjects.Item(t_hero.Items.Waist.Name);
-                    snapshot.Items["LeftRing"] = new BusinessObjects.Item(t_hero.Items.LeftFinger.Name);
-                    snapshot.Items["RightRing"] = new BusinessObjects.Item(t_hero.Items.RightFinger.Name);
-                    snapshot.Items["Pants"] = new BusinessObjects.Item(t_hero.Items.Legs.Name);
-                    snapshot.Items["Boots"] = new BusinessObjects.Item(t_hero.Items.Feet.Name);
-                    snapshot.Items["LeftHand"] = new BusinessObjects.Item(t_hero.Items.MainHand.Name);
-                    snapshot.Items["RightHand"] = new BusinessObjects.Item(t_hero.Items.OffHand.Name);
-
+                    //add all item information
+                    snapshot.Items["Head"] = new BusinessObjects.Item(t_hero.Items.Head.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Head.TooltipParams).Attributes);
+                    snapshot.Items["Neck"] = new BusinessObjects.Item(t_hero.Items.Neck.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Neck.TooltipParams).Attributes);
+                    snapshot.Items["Shoulders"] = new BusinessObjects.Item(t_hero.Items.Shoulders.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Shoulders.TooltipParams).Attributes);
+                    snapshot.Items["Gloves"] = new BusinessObjects.Item(t_hero.Items.Hands.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Hands.TooltipParams).Attributes);
+                    snapshot.Items["Chest"] = new BusinessObjects.Item(t_hero.Items.Torso.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Torso.TooltipParams).Attributes);
+                    snapshot.Items["Bracers"] = new BusinessObjects.Item(t_hero.Items.Bracers.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Bracers.TooltipParams).Attributes);
+                    snapshot.Items["Belt"] = new BusinessObjects.Item(t_hero.Items.Waist.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Waist.TooltipParams).Attributes);
+                    snapshot.Items["LeftRing"] = new BusinessObjects.Item(t_hero.Items.LeftFinger.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.LeftFinger.TooltipParams).Attributes);
+                    snapshot.Items["RightRing"] = new BusinessObjects.Item(t_hero.Items.RightFinger.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.RightFinger.TooltipParams).Attributes);
+                    snapshot.Items["Pants"] = new BusinessObjects.Item(t_hero.Items.Legs.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Legs.TooltipParams).Attributes);
+                    snapshot.Items["Boots"] = new BusinessObjects.Item(t_hero.Items.Feet.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Feet.TooltipParams).Attributes);
+                    snapshot.Items["LeftHand"] = new BusinessObjects.Item(t_hero.Items.MainHand.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.MainHand.TooltipParams).Attributes);
+                    if (t_hero.Items.OffHand != null)
+                        snapshot.Items["RightHand"] = new BusinessObjects.Item(t_hero.Items.OffHand.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.OffHand.TooltipParams).Attributes);
+                    else
+                        snapshot.Items["RightHand"] = new BusinessObjects.Item("empty");
                     //Add all active skills
                     snapshot.Skills[0] = new BusinessObjects.Skill(t_hero.Skills.Active[0].Skill.Name + ": " + t_hero.Skills.Active[0].Rune.Name, t_hero.Skills.Active[0].Rune.Description);
                     snapshot.Skills[1] = new BusinessObjects.Skill(t_hero.Skills.Active[1].Skill.Name + ": " + t_hero.Skills.Active[1].Rune.Name, t_hero.Skills.Active[1].Rune.Description);
