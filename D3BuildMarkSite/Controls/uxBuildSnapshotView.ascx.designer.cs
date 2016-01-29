@@ -13,6 +13,33 @@ namespace D3BuildMarkSite.Controls {
     public partial class uxBuildSnapshotView {
         
         /// <summary>
+        /// lblBuildName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBuildName;
+        
+        /// <summary>
+        /// lblBy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBy;
+        
+        /// <summary>
+        /// lblBattletag control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBattletag;
+        
+        /// <summary>
         /// lblHead control.
         /// </summary>
         /// <remarks>

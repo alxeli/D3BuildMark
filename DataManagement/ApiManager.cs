@@ -97,5 +97,81 @@ namespace DataManagement
 
             return true;
         }
+
+        public bool RetrieveHeroBuild(User user, Hero hero, ref BuildSnapshot snapshot)
+        {
+            try
+            {
+                //ZTn.BNet.BattleNet.BattleTag tag = new ZTn.BNet.BattleNet.BattleTag()
+                Career career = null;
+
+                lock (_api_sync)
+                {
+                    //API Career retrieval
+                    career = Career.CreateFromBattleTag(new ZTn.BNet.BattleNet.BattleTag(user.Profile.BattleTag));
+                }
+                
+                if (career != null)
+                {
+                    ZTn.BNet.D3.Heroes.Hero t_hero = null;
+
+                    //Retrieve the full Hero via API
+                    foreach (ZTn.BNet.D3.Heroes.HeroSummary t_sum in career.Heroes)
+                    {
+                        if(t_sum.Name == hero.Name)
+                        {
+                            t_hero = ZTn.BNet.D3.Heroes.Hero.CreateFromHeroId(new ZTn.BNet.BattleNet.BattleTag(user.Profile.BattleTag), t_sum.Id);
+                        }
+                    }
+
+                    //extract build information and store in the BuildSnapshot
+                    snapshot.Items["Head"] = new BusinessObjects.Item(t_hero.Items.Head.Name);
+                    snapshot.Items["Neck"] = new BusinessObjects.Item(t_hero.Items.Neck.Name);
+                    snapshot.Items["Shoulders"] = new BusinessObjects.Item(t_hero.Items.Shoulders.Name);
+                    snapshot.Items["Gloves"] = new BusinessObjects.Item(t_hero.Items.Hands.Name);
+                    snapshot.Items["Chest"] = new BusinessObjects.Item(t_hero.Items.Torso.Name);
+                    snapshot.Items["Bracers"] = new BusinessObjects.Item(t_hero.Items.Bracers.Name);
+                    snapshot.Items["Belt"] = new BusinessObjects.Item(t_hero.Items.Waist.Name);
+                    snapshot.Items["LeftRing"] = new BusinessObjects.Item(t_hero.Items.LeftFinger.Name);
+                    snapshot.Items["RightRing"] = new BusinessObjects.Item(t_hero.Items.RightFinger.Name);
+                    snapshot.Items["Pants"] = new BusinessObjects.Item(t_hero.Items.Legs.Name);
+                    snapshot.Items["Boots"] = new BusinessObjects.Item(t_hero.Items.Feet.Name);
+                    snapshot.Items["LeftHand"] = new BusinessObjects.Item(t_hero.Items.MainHand.Name);
+                    snapshot.Items["RightHand"] = new BusinessObjects.Item(t_hero.Items.OffHand.Name);
+
+                    //Add all active skills
+                    snapshot.Skills[0] = new BusinessObjects.Skill(t_hero.Skills.Active[0].Skill.Name + ": " + t_hero.Skills.Active[0].Rune.Name, t_hero.Skills.Active[0].Rune.Description);
+                    snapshot.Skills[1] = new BusinessObjects.Skill(t_hero.Skills.Active[1].Skill.Name + ": " + t_hero.Skills.Active[1].Rune.Name, t_hero.Skills.Active[1].Rune.Description);
+                    snapshot.Skills[2] = new BusinessObjects.Skill(t_hero.Skills.Active[2].Skill.Name + ": " + t_hero.Skills.Active[2].Rune.Name, t_hero.Skills.Active[2].Rune.Description);
+                    snapshot.Skills[3] = new BusinessObjects.Skill(t_hero.Skills.Active[3].Skill.Name + ": " + t_hero.Skills.Active[3].Rune.Name, t_hero.Skills.Active[3].Rune.Description);
+                    snapshot.Skills[4] = new BusinessObjects.Skill(t_hero.Skills.Active[4].Skill.Name + ": " + t_hero.Skills.Active[4].Rune.Name, t_hero.Skills.Active[4].Rune.Description);
+                    snapshot.Skills[5] = new BusinessObjects.Skill(t_hero.Skills.Active[5].Skill.Name + ": " + t_hero.Skills.Active[5].Rune.Name, t_hero.Skills.Active[5].Rune.Description);
+
+                    //Add all passive skills
+                    snapshot.Skills[6] = new BusinessObjects.Skill(t_hero.Skills.Passive[0].Skill.Name, t_hero.Skills.Passive[0].Skill.Description);
+                    snapshot.Skills[7] = new BusinessObjects.Skill(t_hero.Skills.Passive[1].Skill.Name, t_hero.Skills.Passive[1].Skill.Description);
+                    snapshot.Skills[8] = new BusinessObjects.Skill(t_hero.Skills.Passive[2].Skill.Name, t_hero.Skills.Passive[2].Skill.Description);
+                    snapshot.Skills[9] = new BusinessObjects.Skill(t_hero.Skills.Passive[3].Skill.Name, t_hero.Skills.Passive[3].Skill.Description);
+                }
+            }
+            catch (FileNotInCacheException)
+            {
+                return false;
+            }
+            catch (BNetResponseFailedException)
+            {
+                return false;
+            }
+            catch (BNetFailureObjectReturnedException)
+            {
+                return false;
+            }
+            catch (ArgumentException)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -18,6 +18,7 @@
 
 .images{
     border: solid #000000 1px;
+    margin-top: 1em;
     width: 100%;
     height: auto;
 }

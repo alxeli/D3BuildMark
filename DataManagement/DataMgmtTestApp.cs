@@ -16,8 +16,8 @@ namespace DataManagement
         {
             //TestDisplayRetrieveProfile();
             //TestCreateUserProfile();
-            TestCreateHero();
-
+            //TestCreateHero();
+            TestRetrieveHeroBuild();
             Console.Read();
         }
         static void TestCreateUserProfile()
@@ -51,6 +51,18 @@ namespace DataManagement
             {
                 Console.WriteLine("TestCreateHero Failed");
             }
+        }
+        static void TestRetrieveHeroBuild()
+        {
+            ApiManager api_manager = ApiManager.GetInstance();
+            User user = new User(new Guid(GUID), "butchiebags");
+            user.Profile = new Profile(BATTLETAG);
+            Hero hero = new Hero("Timmons", "Monk");
+            BuildSnapshot snapshot = new BuildSnapshot();
+
+            api_manager.RetrieveHeroBuild(user, hero, ref snapshot);
+
+            Console.Read();
         }
         static void TestDisplayRetrieveProfile()
         {

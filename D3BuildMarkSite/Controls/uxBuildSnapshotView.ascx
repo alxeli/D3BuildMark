@@ -4,6 +4,13 @@
 <link href="../styles/styles.css" rel="stylesheet" />
 
 <div class="snapshot">
+    <div class="title">
+        <asp:Label ID="lblBuildName" CssClass="nametext" Text="Build Name" runat="server" />
+        <br />
+        <asp:Label ID="lblBy" CssClass="tagtext" Text="by " runat="server" />
+        <asp:Label ID="lblBattletag" CssClass="tagtext" Text="battletag#0000" runat="server" />        
+        <br />
+    </div>
     <div class="images">
         <div class="item head">
             Head: 
