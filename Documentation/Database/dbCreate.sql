@@ -1,4 +1,10 @@
---create 
+--1 run this script
+--2 run aspnet_regsql on D3BuildMark db
+--3 run stored procs script
+--4 run member connect script
+--5 register new user 
+--5 retrieve GUID from db
+--6 update test code with this GUID
 
 USE master;
 GO

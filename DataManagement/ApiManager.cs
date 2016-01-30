@@ -35,7 +35,8 @@ namespace DataManagement
         {
             RegisterPcl.Register();
             
-            D3Api.DataProvider = new CacheableDataProvider(new HttpRequestDataProvider());
+            //D3Api.DataProvider = new CacheableDataProvider(new HttpRequestDataProvider());
+            D3Api.DataProvider = new HttpRequestDataProvider();
             D3Api.ApiKey = API_KEY;
         }
 
