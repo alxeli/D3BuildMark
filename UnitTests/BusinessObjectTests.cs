@@ -13,7 +13,7 @@ namespace UnitTests
         public void TestItemDefaultConstructor()
         {
             string expected_name = null;
-            Item item = new Item();
+            AC_Item item = new AC_Item();
             
             Assert.AreEqual(expected_name, item.Name);
             Assert.IsNotNull(item.Attributes);
@@ -31,7 +31,7 @@ namespace UnitTests
             expected_attributes.Add("2.2% Chance to Freeze on Hit");
             expected_attributes.Add("Critical Hit Damage Increaded by 130.0%");
             
-            Item item = new Item("Shenlongs Relentless Assault", expected_attributes);
+            AC_Item item = new AC_Item("Shenlongs Relentless Assault", expected_attributes);
 
 
             Assert.AreEqual(expected_name, item.Name);
@@ -45,7 +45,7 @@ namespace UnitTests
             string expected_name = null;
             string expected_description = null;
 
-            Skill skill = new Skill();
+            AC_Skill skill = new AC_Skill();
 
             Assert.AreEqual(expected_name, skill.Name);
             Assert.AreEqual(expected_description, skill.Description);
@@ -56,7 +56,7 @@ namespace UnitTests
             string expected_name = "Epiphany - Desert Shroud";
             string expected_description = "Infuse yourself with sand, reducing damage taken by 50%";
 
-            Skill skill = new Skill(expected_name, expected_description);
+            AC_Skill skill = new AC_Skill(expected_name, expected_description);
 
             Assert.AreEqual(expected_name, skill.Name);
             Assert.AreEqual(expected_description, skill.Description);
@@ -67,7 +67,7 @@ namespace UnitTests
         public void TestBuildSnapshotDefaultConstructor()
         {
             string expected_name = null;
-            Dictionary<string, Item> expected_items = new Dictionary<string, Item>();
+            Dictionary<string, AC_Item> expected_items = new Dictionary<string, AC_Item>();
             expected_items.Add("Head", null);
             expected_items.Add("Neck", null);
             expected_items.Add("Shoulders", null);
@@ -81,9 +81,9 @@ namespace UnitTests
             expected_items.Add("Boots", null);
             expected_items.Add("LeftHand", null);
             expected_items.Add("RightHand", null);
-            Skill[] expected_skills = new Skill[10];
+            AC_Skill[] expected_skills = new AC_Skill[10];
 
-            BuildSnapshot buildsnapshot = new BuildSnapshot();
+            AC_BuildSnapshot buildsnapshot = new AC_BuildSnapshot();
 
             Assert.AreEqual(expected_name, buildsnapshot.Name);
             Assert.IsNotNull(buildsnapshot.BuildMark);
@@ -100,7 +100,7 @@ namespace UnitTests
             Assert.IsNull(buildsnapshot.Items["Boots"]);
             Assert.IsNull(buildsnapshot.Items["LeftHand"]);
             Assert.IsNull(buildsnapshot.Items["RightHand"]);
-            foreach (Skill skill in buildsnapshot.Skills)
+            foreach (AC_Skill skill in buildsnapshot.Skills)
             {
                 Assert.IsNotNull(skill);
             }
@@ -109,7 +109,7 @@ namespace UnitTests
         public void TestBuildSnapshotOverloadedConstructor()
         {
             string expected_name = "Holy EP Speed Ulianas";
-            Dictionary<string, Item> expected_items = new Dictionary<string, Item>();
+            Dictionary<string, AC_Item> expected_items = new Dictionary<string, AC_Item>();
             expected_items.Add("Head", null);
             expected_items.Add("Neck", null);
             expected_items.Add("Shoulders", null);
@@ -123,9 +123,9 @@ namespace UnitTests
             expected_items.Add("Boots", null);
             expected_items.Add("LeftHand", null);
             expected_items.Add("RightHand", null);
-            Skill[] expected_skills = new Skill[10];
+            AC_Skill[] expected_skills = new AC_Skill[10];
 
-            BuildSnapshot buildsnapshot = new BuildSnapshot(expected_name);
+            AC_BuildSnapshot buildsnapshot = new AC_BuildSnapshot(expected_name);
 
             Assert.AreEqual(expected_name, buildsnapshot.Name);
             Assert.IsNotNull(buildsnapshot.BuildMark);
@@ -142,7 +142,7 @@ namespace UnitTests
             Assert.IsNull(buildsnapshot.Items["Boots"]);
             Assert.IsNull(buildsnapshot.Items["LeftHand"]);
             Assert.IsNull(buildsnapshot.Items["RightHand"]);
-            foreach (Skill skill in buildsnapshot.Skills)
+            foreach (AC_Skill skill in buildsnapshot.Skills)
             {
                 Assert.IsNotNull(skill);
             }
@@ -159,7 +159,7 @@ namespace UnitTests
             bool expected_is_calculated = false;
             DateTime expected_date_last_calculated = new DateTime(2015, 12, 14, 15, 49, 15, DateTimeKind.Local);
 
-            BuildMark buildmark = new BuildMark();
+            AC_BuildMark buildmark = new AC_BuildMark();
 
             Assert.AreEqual(expected_score, buildmark.Score);
             Assert.AreEqual(expected_damage, buildmark.Damage);
@@ -178,7 +178,7 @@ namespace UnitTests
             bool expected_is_calculated = false;
             DateTime expected_date_last_calculated = new DateTime(2015, 12, 14, 15, 49, 15, DateTimeKind.Local);
 
-            BuildMark buildmark = new BuildMark(expected_damage, expected_toughness, expected_recovery);
+            AC_BuildMark buildmark = new AC_BuildMark(expected_damage, expected_toughness, expected_recovery);
 
             Assert.AreEqual(expected_score, buildmark.Score);
             Assert.AreEqual(expected_damage, buildmark.Damage);
@@ -195,7 +195,7 @@ namespace UnitTests
             string expected_name = null;
             string expected_class = null;
 
-            Hero hero = new Hero();
+            AC_Hero hero = new AC_Hero();
             
             Assert.AreEqual(expected_name, hero.Name);
             Assert.AreEqual(expected_class, hero.Class);
@@ -207,7 +207,7 @@ namespace UnitTests
             string expected_name = "Jondar";
             string expected_class = "Templar";
 
-            Hero hero = new Hero("Jondar", "Templar");
+            AC_Hero hero = new AC_Hero("Jondar", "Templar");
             
             Assert.AreEqual(expected_name, hero.Name);
             Assert.AreEqual(expected_class, hero.Class);
@@ -220,7 +220,7 @@ namespace UnitTests
         {
             string expected_battletag = null;
 
-            Profile profile = new Profile();
+            AC_Profile profile = new AC_Profile();
 
             Assert.AreEqual(expected_battletag, profile.BattleTag);
             Assert.IsNotNull(profile.Heroes);
@@ -230,7 +230,7 @@ namespace UnitTests
         {
             string expected_battletag = "butchiebags#1483";
 
-            Profile profile = new Profile("butchiebags#1483");
+            AC_Profile profile = new AC_Profile("butchiebags#1483");
 
             Assert.AreEqual(expected_battletag, profile.BattleTag);
             Assert.IsNotNull(profile.Heroes);
@@ -242,7 +242,7 @@ namespace UnitTests
         {
             string expected_name = null;
 
-            User user = new User();
+            AC_User user = new AC_User();
 
             Assert.AreEqual(expected_name, user.Name);
             Assert.IsNotNull(user.Profile);
@@ -252,7 +252,7 @@ namespace UnitTests
         {
             string expected_name = "test_user";
 
-            User user = new User("test_user");
+            AC_User user = new AC_User("test_user");
 
             Assert.AreEqual(expected_name, user.Name);
             Assert.IsNotNull(user.Profile);

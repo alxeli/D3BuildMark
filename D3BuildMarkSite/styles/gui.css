@@ -1,82 +1,158 @@
 ﻿body {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 .snapshot{
+    box-sizing: border-box;
     border: solid #000000 1px;
     margin: 1em;
     padding: 1em;
-    width: 20em;
-    height: auto;
+    width: 375px;
+    height: 100%;    
+    background-color: aliceblue;
 }
 
-.item{
-    border: solid #D0D0D0 1px;
-    margin: .5em;
+.item_summary{
+    position: absolute;
+    box-sizing: border-box;
+    border: solid #000000 1px;
+    float: left;
+    top: 63px;
+    left: 390px;
+    margin: 1em;
+    padding: 1em;
+    width: 470px;
+    height: 400px;
+    background-color: aliceblue;
+}
+
+.big_textbox{
+    height: 100%;
+    width: 100%;
 }
 
 .images{
+    position: relative;    
+    display: inline-block;
     border: solid #000000 1px;
     margin-top: 1em;
-    width: 100%;
-    height: auto;
+    width: 340px;
+    height: 450px;
+    background-color: #505050;
+}
+
+.item_image{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.item{
+    position: absolute;
+    border: solid #D0D0D0 1px;
 }
 
 .head{
-
+    left: 135px;
+    top: 19px;
+    width: 64px;
+    height: 64px;
+    overflow: visible;
 }
 
 .neck{
-
+    left: 216px;
+    top: 68px;
+    width: 64px;
+    height: 64px;
 }
 
 .shoulders{
-
+    left: 53px;
+    top: 46px;
+    width: 64px;
+    height: 86px;
+    overflow: visible;
 }
 
 .gloves{
-
+    left: 27px;
+    top: 137px;
+    width: 64px;
+    height: 86px;
+    overflow: visible;
 }
 
 .chest{
-
+    left: 135px;
+    top: 89px;
+    width: 64px;
+    height: 113px;
 }
 
 .bracers{
-
+    left: 243px;
+    top: 137px;
+    width: 64px;
+    height: 86px;
+    overflow: visible;
 }
 
 .belt{
-
+    left: 135px;
+    top: 208px;
+    width: 64px;
+    height: 32px;
 }
 
 .leftring{
-
+    left: 27px;
+    top: 228px;
+    width: 64px;
+    height: 64px;
 }
 
 .rightring{
-
+    left: 243px;
+    top: 228px;
+    width: 64px;
+    height: 64px;
 }
 
 .pants{
-
+    left: 135px;
+    top: 246px;
+    width: 64px;
+    height: 86px;
 }
 
 .boots{
-
+    left: 135px;
+    top: 338px;
+    width: 64px;
+    height: 86px;
+    overflow: visible;
 }
 
 .lefthand{
-
+    left: 27px;
+    top: 297px;
+    width: 64px;
+    height: 128px;
 }
 
 .righthand{
-
+    left: 243px;
+    top: 297px;
+    width: 64px;
+    height: 128px;
 }
 
 .left{
     display: inline-block;
+    margin-top: 1em;
     float: left;
     border: solid #000000 1px;
     width: 70%;
@@ -85,6 +161,7 @@
 
 .right{
     float: right;
+    margin-top: 1em;
     border: solid #000000 1px;
     width: 25%;
     height: auto;

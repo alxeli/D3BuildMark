@@ -9,23 +9,23 @@ namespace BusinessObjects
     /// Uses: BuildSnapshot.
     /// </summary>
 
-    public class Hero
+    public class AC_Hero
     {
         private string m_name;
         private string m_class;
-        private List<BuildSnapshot> m_build_snapshots;
+        private List<AC_BuildSnapshot> m_build_snapshots;
 
-        public Hero()
+        public AC_Hero()
         {
             m_name = null;
             m_class = null;
-            m_build_snapshots = new List<BuildSnapshot>();
+            m_build_snapshots = new List<AC_BuildSnapshot>();
         }
-        public Hero(string name, string class_name)
+        public AC_Hero(string name, string class_name)
         {
             m_name = name;
             m_class = class_name;
-            m_build_snapshots = new List<BuildSnapshot>();
+            m_build_snapshots = new List<AC_BuildSnapshot>();
         }
 
         public string Name
@@ -38,7 +38,7 @@ namespace BusinessObjects
             get { return m_class; }
             set { m_class = value; }
         }
-        public List<BuildSnapshot> BuildSnapshots
+        public List<AC_BuildSnapshot> BuildSnapshots
         {
             get { return m_build_snapshots; }
             set { m_build_snapshots = value; }

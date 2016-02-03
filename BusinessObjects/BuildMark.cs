@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
-    public class BuildMark
+    public class AC_BuildMark
     {
         private string m_score;
         private string m_damage;
@@ -15,7 +15,7 @@ namespace BusinessObjects
         private bool m_is_calculated;
         private DateTime m_date_last_calculated;
 
-        public BuildMark()
+        public AC_BuildMark()
         {
             m_score = null;
             m_damage = null;
@@ -23,7 +23,7 @@ namespace BusinessObjects
             m_recovery = null;
             m_is_calculated = false;
         }
-        public BuildMark(string damage, string toughness, string recovery)
+        public AC_BuildMark(string damage, string toughness, string recovery)
         {
             m_score = null;
             m_damage = damage;

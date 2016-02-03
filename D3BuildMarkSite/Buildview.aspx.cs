@@ -10,11 +10,11 @@ namespace D3BuildMarkSite
 {
     public partial class Buildview : System.Web.UI.Page
     {
-        protected BuildSnapshot m_snapshot = null;
+        protected AC_BuildSnapshot m_snapshot = null;
          
         protected void Page_Load(object sender, EventArgs e)
         {
-            m_snapshot = (BuildSnapshot)Session["BuildSnapshot"];
+            m_snapshot = (AC_BuildSnapshot)Session["BuildSnapshot"];
 
         }
     }

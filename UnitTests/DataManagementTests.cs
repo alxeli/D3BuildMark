@@ -12,7 +12,7 @@ namespace UnitTests
         public void TestApiManagerRetrieveProfileThatExists()
         {
             ApiManager manager =  ApiManager.GetInstance();
-            Profile profile = new Profile();
+            AC_Profile profile = new AC_Profile();
             profile.BattleTag = "butchiebags#1483";
 
             Assert.IsTrue(manager.RetrieveProfile(ref profile));
@@ -23,7 +23,7 @@ namespace UnitTests
         public void TestApiManagerRetrieveProfileThatDoesNotExist()
         {
             ApiManager manager = ApiManager.GetInstance();
-            Profile profile = new Profile();
+            AC_Profile profile = new AC_Profile();
             profile.BattleTag = "invalid";
 
             Assert.IsFalse(manager.RetrieveProfile(ref profile));

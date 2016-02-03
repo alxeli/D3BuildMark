@@ -18,6 +18,7 @@ using ZTn.BNet.D3.Progresses;
 using ZTn.BNet.D3.Skills;
 using ZTn.Bnet.Portable;
 using ZTn.Bnet.Portable.Windows;
+using System.Drawing;
 
 namespace BusinessObjects
 {
@@ -27,27 +28,28 @@ namespace BusinessObjects
     /// Uses: n/a.
     /// </summary>
     
-    public class Item
+    public class AC_Item
     {
         private string m_name;
         private List<string> m_attributes;
+        private byte[] m_image;
 
-        public Item()
+        public AC_Item()
         {
             m_name = null;
             m_attributes = new List<string>();
         }
-        public Item(string name)
+        public AC_Item(string name)
         {
             m_name = name;
             m_attributes = new List<string>();
         }
-        public Item(string name, List<string> attributes)
+        public AC_Item(string name, List<string> attributes)
         {
             m_name = name;
             m_attributes = attributes;
         }
-        public Item(string name, ZTn.BNet.D3.Items.ItemTextAttributes attributes)
+        public AC_Item(string name, ZTn.BNet.D3.Items.ItemTextAttributes attributes)
         {
             m_name = name;
             m_attributes = new List<string>();
@@ -83,12 +85,24 @@ namespace BusinessObjects
 
                 foreach(string text in m_attributes)
                 {
-                    attributes.Append(text);
+                    if (text == "Primary: " || text == "Secondary: " || text == "Passive: ")
+                    {
+                        attributes.Append("\n\n" + text);
+                    }
+                    else
+                    {
+                        attributes.Append("\n" + text);
+                    }
                 }
 
                 return attributes.ToString();
             }
             //set { m_attributes = value; }
+        }
+        public byte[] Image
+        {
+            get { return m_image; }
+            set { m_image = value; }
         }
     }
 }

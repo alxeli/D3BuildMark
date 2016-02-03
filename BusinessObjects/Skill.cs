@@ -12,17 +12,17 @@ namespace BusinessObjects
     /// Uses: n/a.
     /// </summary>
 
-    public class Skill
+    public class AC_Skill
     {
         private string m_name;
         private string m_description;
 
-        public Skill()
+        public AC_Skill()
         {
             m_name = null;
             m_description = null;
         }
-        public Skill(string name, string description)
+        public AC_Skill(string name, string description)
         {
             m_name = name;
             m_description = description;

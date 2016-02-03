@@ -15,11 +15,11 @@ namespace BusinessObjects
         private static BuildMarkManager _instance = null;
         private static object _lock = new object();
         private object _queue_sync = new object();
-        private Queue<BuildMark> m_build_marks = null;
+        private Queue<AC_BuildMark> m_build_marks = null;
 
         private BuildMarkManager()
         {
-            m_build_marks = new Queue<BuildMark>();
+            m_build_marks = new Queue<AC_BuildMark>();
         }
 
         public static BuildMarkManager GetInstance()
@@ -37,7 +37,7 @@ namespace BusinessObjects
             return _instance;
         }
 
-        public void Add(BuildMark build_mark)
+        public void Add(AC_BuildMark build_mark)
         {
             lock (_queue_sync)
             {

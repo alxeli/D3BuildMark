@@ -12,70 +12,57 @@
         <br />
     </div>
     <div class="images">
-        <div class="item head">
-            Head: 
-            <asp:Label ID="lblHead" AssociatedControlID="uxHeadImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxHeadImage" runat="server" />
-        </div>
         <div class="item neck">
-            Neck: 
-            <asp:Label ID="lblNeck" AssociatedControlID="uxNeckImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxNeckImage" runat="server" />
+            <asp:Label ID="lblNeck" AssociatedControlID="uxNeckImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxNeckImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item shoulders">
-            Shoulders: 
-            <asp:Label ID="lblShoulders" AssociatedControlID="uxShouldersImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxShouldersImage" runat="server" />
-        </div>
-        <div class="item gloves">
-            Gloves: 
-            <asp:Label ID="lblGloves" AssociatedControlID="uxGlovesImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxGlovesImage" runat="server" />
-        </div>
-        <div class="item chest">
-            Chest: 
-            <asp:Label ID="lblChest" AssociatedControlID="uxChestImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxChestImage" runat="server" />
+            <asp:Label ID="lblShoulders" AssociatedControlID="uxShouldersImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxShouldersImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item bracers">
-            Bracers: 
-            <asp:Label ID="lblBracers" AssociatedControlID="uxBracersImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxBracersImage" runat="server" />
+            <asp:Label ID="lblBracers" AssociatedControlID="uxBracersImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxBracersImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item belt">
-            Belt: 
-            <asp:Label ID="lblBelt" AssociatedControlID="uxBeltImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxBeltImage" runat="server" />
+            <asp:Label ID="lblBelt" AssociatedControlID="uxBeltImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxBeltImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item leftring">
-            Left Ring: 
-            <asp:Label ID="lblLeftRing" AssociatedControlID="uxLeftRingImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxLeftRingImage" runat="server" />
+            <asp:Label ID="lblLeftRing" AssociatedControlID="uxLeftRingImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxLeftRingImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item rightring">
-            Right Ring: 
-            <asp:Label ID="lblRightRing" AssociatedControlID="uxRightRingImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxRightRingImage" runat="server" />
+            <asp:Label ID="lblRightRing" AssociatedControlID="uxRightRingImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxRightRingImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item pants">
-            Pants: 
-            <asp:Label ID="lblPants" AssociatedControlID="uxPantsImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxPantsImage" runat="server" />
+            <asp:Label ID="lblPants" AssociatedControlID="uxPantsImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxPantsImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item boots">
-            Boots: 
-            <asp:Label ID="lblBoots" AssociatedControlID="uxBootsImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxBootsImage" runat="server" />
+            <asp:Label ID="lblBoots" AssociatedControlID="uxBootsImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxBootsImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item lefthand">
-            Left Hand: 
-            <asp:Label ID="lblLeftHand" AssociatedControlID="uxLeftHandImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxLeftHandImage" runat="server" />
+            <asp:Label ID="lblLeftHand" AssociatedControlID="uxLeftHandImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxLeftHandImage" CssClass="item_image" runat="server" />
         </div>
         <div class="item righthand">
-            Right Hand: 
-            <asp:Label ID="lblRightHand" AssociatedControlID="uxRightHandImage" runat="server">Empty</asp:Label>
-            <asp:Image ID="uxRightHandImage" runat="server" />
+            <asp:Label ID="lblRightHand" AssociatedControlID="uxRightHandImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxRightHandImage" CssClass="item_image" runat="server" />
+        </div>
+        <div class="item chest">
+            <asp:Label ID="lblChest" AssociatedControlID="uxChestImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxChestImage" CssClass="item_image" runat="server" />
+        </div>
+        <div class="item gloves">
+            <asp:Label ID="lblGloves" AssociatedControlID="uxGlovesImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxGlovesImage" CssClass="item_image" runat="server" />
+        </div>
+        <div class="item head">
+            <asp:Label ID="lblHead" AssociatedControlID="uxHeadImage" Visible="false" runat="server">Empty</asp:Label>
+            <asp:Image ID="uxHeadImage" CssClass="item_image" runat="server" />
         </div>
     </div>
     <br />
@@ -116,4 +103,8 @@
     <br />
 
     <div style="clear:both;"></div>
+</div>
+
+<div class="item_summary">
+    <asp:TextBox ID="uxItemSummary" ReadOnly="true" TextMode="MultiLine" Text="" CssClass="big_textbox" runat="server" />
 </div>

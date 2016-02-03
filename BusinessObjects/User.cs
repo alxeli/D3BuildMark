@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
-    public class User
+    public class AC_User
     {
         private Guid m_id;
         private string m_name;
-        private Profile m_profile;
+        private AC_Profile m_profile;
 
-        public User()
+        public AC_User()
         {
             m_name = null;
-            m_profile = new Profile();
+            m_profile = new AC_Profile();
         }
-        public User(string name)
+        public AC_User(string name)
         {
             m_name = name;
-            m_profile = new Profile();
+            m_profile = new AC_Profile();
         }
-        public User(Guid id, string name)
+        public AC_User(Guid id, string name)
         {
             m_id = id;
             m_name = name;
-            m_profile = new Profile();
+            m_profile = new AC_Profile();
         }
 
         public Guid GUID
@@ -39,7 +39,7 @@ namespace BusinessObjects
             get { return m_name; }
             set { m_name = value; }
         }
-        public Profile Profile
+        public AC_Profile Profile
         {
             get { return m_profile; }
             set { m_profile = value; }

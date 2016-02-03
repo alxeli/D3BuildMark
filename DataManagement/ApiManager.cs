@@ -54,9 +54,8 @@ namespace DataManagement
             }
             return _instance;
         }
-
-        //
-        public bool RetrieveProfile(ref Profile profile)
+        
+        public bool RetrieveProfile(ref AC_Profile profile)
         {
             try
             {
@@ -75,7 +74,7 @@ namespace DataManagement
                 {
                     foreach (ZTn.BNet.D3.Heroes.HeroSummary hs in career.Heroes)
                     {
-                        profile.Heroes.Add(new Hero(hs.Name, hs.HeroClass.ToString()));
+                        profile.Heroes.Add(new AC_Hero(hs.Name, hs.HeroClass.ToString()));
                     }
                 }
             }
@@ -99,16 +98,14 @@ namespace DataManagement
             return true;
         }
 
-        public bool RetrieveHeroBuild(User user, Hero hero, ref BuildSnapshot snapshot)
+        public bool RetrieveHeroBuild(AC_User user, AC_Hero hero, ref AC_BuildSnapshot snapshot)
         {
             try
             {
-                //ZTn.BNet.BattleNet.BattleTag tag = new ZTn.BNet.BattleNet.BattleTag()
                 Career career = null;
 
                 lock (_api_sync)
                 {
-                    //API Career retrieval
                     career = Career.CreateFromBattleTag(new ZTn.BNet.BattleNet.BattleTag(user.Profile.BattleTag));
                 }
                 
@@ -121,40 +118,41 @@ namespace DataManagement
                     {
                         if(t_sum.Name == hero.Name)
                         {
-                            t_hero = ZTn.BNet.D3.Heroes.Hero.CreateFromHeroId(new ZTn.BNet.BattleNet.BattleTag(user.Profile.BattleTag), t_sum.Id);
+                            lock (_api_sync)
+                            {
+                                t_hero = ZTn.BNet.D3.Heroes.Hero.CreateFromHeroId(new ZTn.BNet.BattleNet.BattleTag(user.Profile.BattleTag), t_sum.Id);
+                            }
                         }
                     }
-
+                    
                     //add all item information
-                    snapshot.Items["Head"] = new BusinessObjects.Item(t_hero.Items.Head.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Head.TooltipParams).Attributes);
-                    snapshot.Items["Neck"] = new BusinessObjects.Item(t_hero.Items.Neck.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Neck.TooltipParams).Attributes);
-                    snapshot.Items["Shoulders"] = new BusinessObjects.Item(t_hero.Items.Shoulders.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Shoulders.TooltipParams).Attributes);
-                    snapshot.Items["Gloves"] = new BusinessObjects.Item(t_hero.Items.Hands.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Hands.TooltipParams).Attributes);
-                    snapshot.Items["Chest"] = new BusinessObjects.Item(t_hero.Items.Torso.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Torso.TooltipParams).Attributes);
-                    snapshot.Items["Bracers"] = new BusinessObjects.Item(t_hero.Items.Bracers.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Bracers.TooltipParams).Attributes);
-                    snapshot.Items["Belt"] = new BusinessObjects.Item(t_hero.Items.Waist.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Waist.TooltipParams).Attributes);
-                    snapshot.Items["LeftRing"] = new BusinessObjects.Item(t_hero.Items.LeftFinger.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.LeftFinger.TooltipParams).Attributes);
-                    snapshot.Items["RightRing"] = new BusinessObjects.Item(t_hero.Items.RightFinger.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.RightFinger.TooltipParams).Attributes);
-                    snapshot.Items["Pants"] = new BusinessObjects.Item(t_hero.Items.Legs.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Legs.TooltipParams).Attributes);
-                    snapshot.Items["Boots"] = new BusinessObjects.Item(t_hero.Items.Feet.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.Feet.TooltipParams).Attributes);
-                    snapshot.Items["LeftHand"] = new BusinessObjects.Item(t_hero.Items.MainHand.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.MainHand.TooltipParams).Attributes);
-                    if (t_hero.Items.OffHand != null)
-                        snapshot.Items["RightHand"] = new BusinessObjects.Item(t_hero.Items.OffHand.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(t_hero.Items.OffHand.TooltipParams).Attributes);
-                    else
-                        snapshot.Items["RightHand"] = new BusinessObjects.Item("empty");
+                    snapshot.Items["Head"] = RetrieveItem(t_hero.Items.Head);
+                    snapshot.Items["Neck"] = RetrieveItem(t_hero.Items.Neck);
+                    snapshot.Items["Shoulders"] = RetrieveItem(t_hero.Items.Shoulders);
+                    snapshot.Items["Gloves"] = RetrieveItem(t_hero.Items.Hands);
+                    snapshot.Items["Chest"] = RetrieveItem(t_hero.Items.Torso);
+                    snapshot.Items["Bracers"] = RetrieveItem(t_hero.Items.Bracers);
+                    snapshot.Items["Belt"] = RetrieveItem(t_hero.Items.Waist);
+                    snapshot.Items["LeftRing"] = RetrieveItem(t_hero.Items.LeftFinger);
+                    snapshot.Items["RightRing"] = RetrieveItem(t_hero.Items.RightFinger);
+                    snapshot.Items["Pants"] = RetrieveItem(t_hero.Items.Legs);
+                    snapshot.Items["Boots"] = RetrieveItem(t_hero.Items.Feet);
+                    snapshot.Items["LeftHand"] = RetrieveItem(t_hero.Items.MainHand);
+                    snapshot.Items["RightHand"] = RetrieveItem(t_hero.Items.OffHand);
+
                     //Add all active skills
-                    snapshot.Skills[0] = new BusinessObjects.Skill(t_hero.Skills.Active[0].Skill.Name + ": " + t_hero.Skills.Active[0].Rune.Name, t_hero.Skills.Active[0].Rune.Description);
-                    snapshot.Skills[1] = new BusinessObjects.Skill(t_hero.Skills.Active[1].Skill.Name + ": " + t_hero.Skills.Active[1].Rune.Name, t_hero.Skills.Active[1].Rune.Description);
-                    snapshot.Skills[2] = new BusinessObjects.Skill(t_hero.Skills.Active[2].Skill.Name + ": " + t_hero.Skills.Active[2].Rune.Name, t_hero.Skills.Active[2].Rune.Description);
-                    snapshot.Skills[3] = new BusinessObjects.Skill(t_hero.Skills.Active[3].Skill.Name + ": " + t_hero.Skills.Active[3].Rune.Name, t_hero.Skills.Active[3].Rune.Description);
-                    snapshot.Skills[4] = new BusinessObjects.Skill(t_hero.Skills.Active[4].Skill.Name + ": " + t_hero.Skills.Active[4].Rune.Name, t_hero.Skills.Active[4].Rune.Description);
-                    snapshot.Skills[5] = new BusinessObjects.Skill(t_hero.Skills.Active[5].Skill.Name + ": " + t_hero.Skills.Active[5].Rune.Name, t_hero.Skills.Active[5].Rune.Description);
+                    snapshot.Skills[0] = new AC_Skill(t_hero.Skills.Active[0].Skill.Name + ": " + t_hero.Skills.Active[0].Rune.Name, t_hero.Skills.Active[0].Rune.Description);
+                    snapshot.Skills[1] = new AC_Skill(t_hero.Skills.Active[1].Skill.Name + ": " + t_hero.Skills.Active[1].Rune.Name, t_hero.Skills.Active[1].Rune.Description);
+                    snapshot.Skills[2] = new AC_Skill(t_hero.Skills.Active[2].Skill.Name + ": " + t_hero.Skills.Active[2].Rune.Name, t_hero.Skills.Active[2].Rune.Description);
+                    snapshot.Skills[3] = new AC_Skill(t_hero.Skills.Active[3].Skill.Name + ": " + t_hero.Skills.Active[3].Rune.Name, t_hero.Skills.Active[3].Rune.Description);
+                    snapshot.Skills[4] = new AC_Skill(t_hero.Skills.Active[4].Skill.Name + ": " + t_hero.Skills.Active[4].Rune.Name, t_hero.Skills.Active[4].Rune.Description);
+                    snapshot.Skills[5] = new AC_Skill(t_hero.Skills.Active[5].Skill.Name + ": " + t_hero.Skills.Active[5].Rune.Name, t_hero.Skills.Active[5].Rune.Description);
 
                     //Add all passive skills
-                    snapshot.Skills[6] = new BusinessObjects.Skill(t_hero.Skills.Passive[0].Skill.Name, t_hero.Skills.Passive[0].Skill.Description);
-                    snapshot.Skills[7] = new BusinessObjects.Skill(t_hero.Skills.Passive[1].Skill.Name, t_hero.Skills.Passive[1].Skill.Description);
-                    snapshot.Skills[8] = new BusinessObjects.Skill(t_hero.Skills.Passive[2].Skill.Name, t_hero.Skills.Passive[2].Skill.Description);
-                    snapshot.Skills[9] = new BusinessObjects.Skill(t_hero.Skills.Passive[3].Skill.Name, t_hero.Skills.Passive[3].Skill.Description);
+                    snapshot.Skills[6] = new AC_Skill(t_hero.Skills.Passive[0].Skill.Name, t_hero.Skills.Passive[0].Skill.Description);
+                    snapshot.Skills[7] = new AC_Skill(t_hero.Skills.Passive[1].Skill.Name, t_hero.Skills.Passive[1].Skill.Description);
+                    snapshot.Skills[8] = new AC_Skill(t_hero.Skills.Passive[2].Skill.Name, t_hero.Skills.Passive[2].Skill.Description);
+                    snapshot.Skills[9] = new AC_Skill(t_hero.Skills.Passive[3].Skill.Name, t_hero.Skills.Passive[3].Skill.Description);
                 }
             }
             catch (FileNotInCacheException)
@@ -175,6 +173,25 @@ namespace DataManagement
             }
 
             return true;
+        }
+        private AC_Item RetrieveItem(ZTn.BNet.D3.Items.ItemSummary item)
+        {
+            AC_Item t_item = null;
+
+            if(item != null)
+            {
+                lock (_api_sync)
+                {
+                    t_item = new AC_Item(item.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(item.TooltipParams).Attributes);
+                    t_item.Image = D3Api.GetItemIcon(item.Icon, "large").Bytes;
+                }
+            }
+            else
+            {
+                t_item = new AC_Item("Empty");
+            }
+
+            return t_item;
         }
     }
 }

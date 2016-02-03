@@ -20,7 +20,7 @@ namespace D3BuildMarkSite.Users
         protected void uxCreateUserWizard_CreatedUser(object sender, EventArgs e)
         {
             DBManager db_manager = new DBManager();
-            User new_user = new User();
+            AC_User new_user = new AC_User();
 
             //initialize user object using membership information
             new_user.GUID = new Guid(Membership.GetUser((sender as CreateUserWizard).UserName).ProviderUserKey.ToString());

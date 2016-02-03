@@ -28,10 +28,10 @@ namespace D3BuildMarkSite
             ApiManager api = ApiManager.GetInstance();
 
 
-            User user = new User(new Guid(GUID), "butchiebags");
-            user.Profile = new Profile(BATTLETAG);
-            Hero hero = new Hero("Timmons", "Monk");
-            BuildSnapshot snapshot = new BuildSnapshot("Wave of Fire");
+            AC_User user = new AC_User(new Guid(GUID), "butchiebags");
+            user.Profile = new AC_Profile(BATTLETAG);
+            AC_Hero hero = new AC_Hero("Timmons", "Monk");
+            AC_BuildSnapshot snapshot = new AC_BuildSnapshot("Wave of Fire", BATTLETAG);
 
             //populate snapshot with data from battle.net based on the battletag and hero's name
             api.RetrieveHeroBuild(user, hero, ref snapshot);

@@ -9,18 +9,20 @@ namespace BusinessObjects
     /// Uses: BuildMark
     /// </summary>
 
-    public class BuildSnapshot
+    public class AC_BuildSnapshot
     {
         private string m_name;
-        private BuildMark m_build_mark;
-        private Dictionary<string, Item> m_items;
-        private Skill[] m_skills;
-
-        public BuildSnapshot()
+        private string m_battletag;
+        private AC_BuildMark m_build_mark;
+        private Dictionary<string, AC_Item> m_items;
+        private AC_Skill[] m_skills;
+        
+        public AC_BuildSnapshot()
         {
             m_name = null;
-            m_build_mark = new BuildMark();
-            m_items = new Dictionary<string, Item>();
+            m_battletag = null;
+            m_build_mark = new AC_BuildMark();
+            m_items = new Dictionary<string, AC_Item>();
             m_items.Add("Head", null);
             m_items.Add("Neck", null);
             m_items.Add("Shoulders", null);
@@ -34,17 +36,18 @@ namespace BusinessObjects
             m_items.Add("Boots", null);
             m_items.Add("LeftHand", null);
             m_items.Add("RightHand", null);
-            m_skills = new Skill[10];
+            m_skills = new AC_Skill[10];
             for(int i=0; i<10; i++)
             {
-                m_skills[i] = new Skill();
+                m_skills[i] = new AC_Skill();
             }
         }
-        public BuildSnapshot(string name)
+        public AC_BuildSnapshot(string name)
         {
             m_name = name;
-            m_build_mark = new BuildMark();
-            m_items = new Dictionary<string, Item>();
+            m_battletag = null;
+            m_build_mark = new AC_BuildMark();
+            m_items = new Dictionary<string, AC_Item>();
             m_items.Add("Head", null);
             m_items.Add("Neck", null);
             m_items.Add("Shoulders", null);
@@ -58,10 +61,35 @@ namespace BusinessObjects
             m_items.Add("Boots", null);
             m_items.Add("LeftHand", null);
             m_items.Add("RightHand", null);
-            m_skills = new Skill[10];
+            m_skills = new AC_Skill[10];
             for (int i = 0; i < 10; i++)
             {
-                m_skills[i] = new Skill();
+                m_skills[i] = new AC_Skill();
+            }
+        }
+        public AC_BuildSnapshot(string name, string battletag)
+        {
+            m_name = name;
+            m_battletag = battletag;
+            m_build_mark = new AC_BuildMark();
+            m_items = new Dictionary<string, AC_Item>();
+            m_items.Add("Head", null);
+            m_items.Add("Neck", null);
+            m_items.Add("Shoulders", null);
+            m_items.Add("Gloves", null);
+            m_items.Add("Chest", null);
+            m_items.Add("Bracers", null);
+            m_items.Add("Belt", null);
+            m_items.Add("LeftRing", null);
+            m_items.Add("RightRing", null);
+            m_items.Add("Pants", null);
+            m_items.Add("Boots", null);
+            m_items.Add("LeftHand", null);
+            m_items.Add("RightHand", null);
+            m_skills = new AC_Skill[10];
+            for (int i = 0; i < 10; i++)
+            {
+                m_skills[i] = new AC_Skill();
             }
         }
 
@@ -70,17 +98,22 @@ namespace BusinessObjects
             get { return m_name; }
             set { m_name = value; }
         }
-        public BuildMark BuildMark
+        public string Battletag
+        {
+            get { return m_battletag; }
+            set { m_battletag = value; }
+        }
+        public AC_BuildMark BuildMark
         {
             get { return m_build_mark; }
             set { m_build_mark = value; }
         }
-        public Dictionary<string, Item> Items
+        public Dictionary<string, AC_Item> Items
         {
             get { return m_items; }
             set { m_items = value; }
         }
-        public Skill[] Skills
+        public AC_Skill[] Skills
         {
             get { return m_skills; }
             set { m_skills = value; }
