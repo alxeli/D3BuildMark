@@ -10,7 +10,25 @@
 namespace D3BuildMarkSite.Controls {
     
     
-    public partial class uxBuildSnapshotView {
+    public partial class ViewBuildSnapshotAlt {
+        
+        /// <summary>
+        /// uxAltHeroName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList uxAltHeroName;
+        
+        /// <summary>
+        /// uxAltBuildName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltBuildName;
         
         /// <summary>
         /// lblBuildName control.
@@ -20,6 +38,42 @@ namespace D3BuildMarkSite.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBuildName;
+        
+        /// <summary>
+        /// uxAltImportSnapshot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxAltImportSnapshot;
+        
+        /// <summary>
+        /// uxAltDeleteSnapshot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxAltDeleteSnapshot;
+        
+        /// <summary>
+        /// uxAltSaveBuildName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxAltSaveBuildName;
+        
+        /// <summary>
+        /// uxAltEditBuildName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxAltEditBuildName;
         
         /// <summary>
         /// lblBy control.
@@ -49,13 +103,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblNeck;
         
         /// <summary>
-        /// uxNeckImage control.
+        /// uxAltNeckImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxNeckImage;
+        protected global::System.Web.UI.WebControls.Image uxAltNeckImage;
         
         /// <summary>
         /// lblShoulders control.
@@ -67,13 +121,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblShoulders;
         
         /// <summary>
-        /// uxShouldersImage control.
+        /// uxAltShouldersImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxShouldersImage;
+        protected global::System.Web.UI.WebControls.Image uxAltShouldersImage;
         
         /// <summary>
         /// lblBracers control.
@@ -85,31 +139,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblBracers;
         
         /// <summary>
-        /// uxBracersImage control.
+        /// uxAltBracersImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxBracersImage;
-        
-        /// <summary>
-        /// lblBelt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBelt;
-        
-        /// <summary>
-        /// uxBeltImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxBeltImage;
+        protected global::System.Web.UI.WebControls.Image uxAltBracersImage;
         
         /// <summary>
         /// lblLeftRing control.
@@ -121,13 +157,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblLeftRing;
         
         /// <summary>
-        /// uxLeftRingImage control.
+        /// uxAltLeftRingImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxLeftRingImage;
+        protected global::System.Web.UI.WebControls.Image uxAltLeftRingImage;
         
         /// <summary>
         /// lblRightRing control.
@@ -139,13 +175,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblRightRing;
         
         /// <summary>
-        /// uxRightRingImage control.
+        /// uxAltRightRingImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxRightRingImage;
+        protected global::System.Web.UI.WebControls.Image uxAltRightRingImage;
         
         /// <summary>
         /// lblPants control.
@@ -157,13 +193,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblPants;
         
         /// <summary>
-        /// uxPantsImage control.
+        /// uxAltPantsImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxPantsImage;
+        protected global::System.Web.UI.WebControls.Image uxAltPantsImage;
         
         /// <summary>
         /// lblBoots control.
@@ -175,13 +211,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblBoots;
         
         /// <summary>
-        /// uxBootsImage control.
+        /// uxAltBootsImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxBootsImage;
+        protected global::System.Web.UI.WebControls.Image uxAltBootsImage;
         
         /// <summary>
         /// lblLeftHand control.
@@ -193,13 +229,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblLeftHand;
         
         /// <summary>
-        /// uxLeftHandImage control.
+        /// uxAltLeftHandImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxLeftHandImage;
+        protected global::System.Web.UI.WebControls.Image uxAltLeftHandImage;
         
         /// <summary>
         /// lblRightHand control.
@@ -211,13 +247,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblRightHand;
         
         /// <summary>
-        /// uxRightHandImage control.
+        /// uxAltRightHandImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxRightHandImage;
+        protected global::System.Web.UI.WebControls.Image uxAltRightHandImage;
         
         /// <summary>
         /// lblChest control.
@@ -229,13 +265,31 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblChest;
         
         /// <summary>
-        /// uxChestImage control.
+        /// uxAltChestImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxChestImage;
+        protected global::System.Web.UI.WebControls.Image uxAltChestImage;
+        
+        /// <summary>
+        /// lblBelt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBelt;
+        
+        /// <summary>
+        /// uxAltBeltImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image uxAltBeltImage;
         
         /// <summary>
         /// lblGloves control.
@@ -247,13 +301,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblGloves;
         
         /// <summary>
-        /// uxGlovesImage control.
+        /// uxAltGlovesImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxGlovesImage;
+        protected global::System.Web.UI.WebControls.Image uxAltGlovesImage;
         
         /// <summary>
         /// lblHead control.
@@ -265,13 +319,130 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblHead;
         
         /// <summary>
-        /// uxHeadImage control.
+        /// uxAltHeadImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image uxHeadImage;
+        protected global::System.Web.UI.WebControls.Image uxAltHeadImage;
+        
+        /// <summary>
+        /// uxAltNeckAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltNeckAttributes;
+        
+        /// <summary>
+        /// uxAltShouldersAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltShouldersAttributes;
+        
+        /// <summary>
+        /// uxAltBracersAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltBracersAttributes;
+        
+        /// <summary>
+        /// uxAltBeltAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltBeltAttributes;
+        
+        /// <summary>
+        /// uxAltLeftRingAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltLeftRingAttributes;
+        
+        /// <summary>
+        /// uxAltRightRingAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltRightRingAttributes;
+        
+        /// <summary>
+        /// uxAltPantsAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltPantsAttributes;
+        
+        /// <summary>
+        /// uxAltBootsAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltBootsAttributes;
+        
+        /// <summary>
+        /// uxAltLeftHandAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltLeftHandAttributes;
+        
+        /// <summary>
+        /// uxAltRightHandAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltRightHandAttributes;
+        
+        /// <summary>
+        /// uxAltChestAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltChestAttributes;
+        
+        /// <summary>
+        /// uxAltGlovesAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltGlovesAttributes;
+        
+        /// <summary>
+        /// uxAltHeadAttributes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxAltHeadAttributes;
         
         /// <summary>
         /// lblPrimaryAttribute control.
@@ -283,13 +454,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblPrimaryAttribute;
         
         /// <summary>
-        /// uxPrimaryAttribute control.
+        /// uxAltPrimaryAttribute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label uxPrimaryAttribute;
+        protected global::System.Web.UI.WebControls.Label uxAltPrimaryAttribute;
         
         /// <summary>
         /// lblDamage control.
@@ -301,13 +472,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblDamage;
         
         /// <summary>
-        /// uxDamage control.
+        /// uxAltDamage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label uxDamage;
+        protected global::System.Web.UI.WebControls.Label uxAltDamage;
         
         /// <summary>
         /// lblToughness control.
@@ -319,13 +490,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblToughness;
         
         /// <summary>
-        /// uxToughness control.
+        /// uxAltToughness control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label uxToughness;
+        protected global::System.Web.UI.WebControls.Label uxAltToughness;
         
         /// <summary>
         /// lblRecovery control.
@@ -337,13 +508,13 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblRecovery;
         
         /// <summary>
-        /// uxRecovery control.
+        /// uxAltRecovery control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label uxRecovery;
+        protected global::System.Web.UI.WebControls.Label uxAltRecovery;
         
         /// <summary>
         /// lblBuildMark control.
@@ -355,21 +526,48 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label lblBuildMark;
         
         /// <summary>
-        /// uxBuildMark control.
+        /// uxAltBuildMark control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label uxBuildMark;
+        protected global::System.Web.UI.WebControls.Label uxAltBuildMark;
         
         /// <summary>
-        /// uxItemSummary control.
+        /// lblVersion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxItemSummary;
+        protected global::System.Web.UI.WebControls.Label lblVersion;
+        
+        /// <summary>
+        /// uxAltVersion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList uxAltVersion;
+        
+        /// <summary>
+        /// uxAltImportNewSnapshot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxAltImportNewSnapshot;
+        
+        /// <summary>
+        /// uxAltCompare control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxAltCompare;
     }
 }

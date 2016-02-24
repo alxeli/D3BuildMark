@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,6 +57,27 @@ namespace DataManagement
             return _instance;
         }
         
+        public bool BattletagExists(string battletag)
+        {
+            if(battletag == null || battletag.Length < 5)
+            {
+                return false;
+            }
+
+            try
+            {
+                if (Career.CreateFromBattleTag(new ZTn.BNet.BattleNet.BattleTag(battletag)) == null)
+                {
+                    return false;
+                }
+            }
+            catch(ArgumentException)
+            {
+                return false;
+            }
+
+            return true;
+        }
         public bool RetrieveProfile(ref AC_Profile profile)
         {
             try
@@ -98,6 +121,54 @@ namespace DataManagement
             return true;
         }
 
+        public bool RetrieveAllHeroes(AC_Profile profile, ref List<AC_Hero> heroes)
+        {
+            if(profile == null || profile.BattleTag == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                Career career = null;
+
+                lock (_api_sync)
+                {
+                    career = Career.CreateFromBattleTag(new ZTn.BNet.BattleNet.BattleTag(profile.BattleTag));
+                }
+
+                if(career != null)
+                {
+                    foreach (ZTn.BNet.D3.Heroes.HeroSummary t_sum in career.Heroes)
+                    {
+                        heroes.Add(new AC_Hero(t_sum.Name, t_sum.HeroClass.ToString()));
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (FileNotInCacheException e)
+            {
+                throw e;
+            }
+            catch (BNetResponseFailedException e)
+            {
+                throw e;
+            }
+            catch (BNetFailureObjectReturnedException e)
+            {
+                throw e;
+            }
+            catch (ArgumentException e)
+            {
+                throw e;
+            }
+            
+            return true;
+        }
+
         public bool RetrieveHeroBuild(AC_User user, AC_Hero hero, ref AC_BuildSnapshot snapshot)
         {
             try
@@ -124,7 +195,12 @@ namespace DataManagement
                             }
                         }
                     }
-                    
+
+                    snapshot.BuildMark = new AC_BuildMark(t_hero.Stats, t_hero.HeroClass.ToString());
+
+                    //set battletag in snapshot
+                    snapshot.Battletag = career.BattleTag.ToString();
+
                     //add all item information
                     snapshot.Items["Head"] = RetrieveItem(t_hero.Items.Head);
                     snapshot.Items["Neck"] = RetrieveItem(t_hero.Items.Neck);
@@ -140,36 +216,38 @@ namespace DataManagement
                     snapshot.Items["LeftHand"] = RetrieveItem(t_hero.Items.MainHand);
                     snapshot.Items["RightHand"] = RetrieveItem(t_hero.Items.OffHand);
 
-                    //Add all active skills
-                    snapshot.Skills[0] = new AC_Skill(t_hero.Skills.Active[0].Skill.Name + ": " + t_hero.Skills.Active[0].Rune.Name, t_hero.Skills.Active[0].Rune.Description);
-                    snapshot.Skills[1] = new AC_Skill(t_hero.Skills.Active[1].Skill.Name + ": " + t_hero.Skills.Active[1].Rune.Name, t_hero.Skills.Active[1].Rune.Description);
-                    snapshot.Skills[2] = new AC_Skill(t_hero.Skills.Active[2].Skill.Name + ": " + t_hero.Skills.Active[2].Rune.Name, t_hero.Skills.Active[2].Rune.Description);
-                    snapshot.Skills[3] = new AC_Skill(t_hero.Skills.Active[3].Skill.Name + ": " + t_hero.Skills.Active[3].Rune.Name, t_hero.Skills.Active[3].Rune.Description);
-                    snapshot.Skills[4] = new AC_Skill(t_hero.Skills.Active[4].Skill.Name + ": " + t_hero.Skills.Active[4].Rune.Name, t_hero.Skills.Active[4].Rune.Description);
-                    snapshot.Skills[5] = new AC_Skill(t_hero.Skills.Active[5].Skill.Name + ": " + t_hero.Skills.Active[5].Rune.Name, t_hero.Skills.Active[5].Rune.Description);
+                    snapshot.Skills = RetrieveSkills(t_hero.Skills);
 
-                    //Add all passive skills
-                    snapshot.Skills[6] = new AC_Skill(t_hero.Skills.Passive[0].Skill.Name, t_hero.Skills.Passive[0].Skill.Description);
-                    snapshot.Skills[7] = new AC_Skill(t_hero.Skills.Passive[1].Skill.Name, t_hero.Skills.Passive[1].Skill.Description);
-                    snapshot.Skills[8] = new AC_Skill(t_hero.Skills.Passive[2].Skill.Name, t_hero.Skills.Passive[2].Skill.Description);
-                    snapshot.Skills[9] = new AC_Skill(t_hero.Skills.Passive[3].Skill.Name, t_hero.Skills.Passive[3].Skill.Description);
+                    ////Add all active skills
+                    //snapshot.Skills[0] = new AC_Skill(t_hero.Skills.Active[0].Skill.Name + ": " + t_hero.Skills.Active[0].Rune.Name, t_hero.Skills.Active[0].Rune.Description);
+                    //snapshot.Skills[1] = new AC_Skill(t_hero.Skills.Active[1].Skill.Name + ": " + t_hero.Skills.Active[1].Rune.Name, t_hero.Skills.Active[1].Rune.Description);
+                    //snapshot.Skills[2] = new AC_Skill(t_hero.Skills.Active[2].Skill.Name + ": " + t_hero.Skills.Active[2].Rune.Name, t_hero.Skills.Active[2].Rune.Description);
+                    //snapshot.Skills[3] = new AC_Skill(t_hero.Skills.Active[3].Skill.Name + ": " + t_hero.Skills.Active[3].Rune.Name, t_hero.Skills.Active[3].Rune.Description);
+                    //snapshot.Skills[4] = new AC_Skill(t_hero.Skills.Active[4].Skill.Name + ": " + t_hero.Skills.Active[4].Rune.Name, t_hero.Skills.Active[4].Rune.Description);
+                    //snapshot.Skills[5] = new AC_Skill(t_hero.Skills.Active[5].Skill.Name + ": " + t_hero.Skills.Active[5].Rune.Name, t_hero.Skills.Active[5].Rune.Description);
+
+                    ////Add all passive skills
+                    //snapshot.Skills[6] = new AC_Skill(t_hero.Skills.Passive[0].Skill.Name, t_hero.Skills.Passive[0].Skill.Description);
+                    //snapshot.Skills[7] = new AC_Skill(t_hero.Skills.Passive[1].Skill.Name, t_hero.Skills.Passive[1].Skill.Description);
+                    //snapshot.Skills[8] = new AC_Skill(t_hero.Skills.Passive[2].Skill.Name, t_hero.Skills.Passive[2].Skill.Description);
+                    //snapshot.Skills[9] = new AC_Skill(t_hero.Skills.Passive[3].Skill.Name, t_hero.Skills.Passive[3].Skill.Description);
                 }
             }
-            catch (FileNotInCacheException)
+            catch (FileNotInCacheException e)
             {
-                return false;
+                throw e;
             }
-            catch (BNetResponseFailedException)
+            catch (BNetResponseFailedException e)
             {
-                return false;
+                throw e;
             }
-            catch (BNetFailureObjectReturnedException)
+            catch (BNetFailureObjectReturnedException e)
             {
-                return false;
+                throw e;
             }
-            catch (ArgumentException)
+            catch (ArgumentException e)
             {
-                return false;
+                throw e;
             }
 
             return true;
@@ -184,6 +262,11 @@ namespace DataManagement
                 {
                     t_item = new AC_Item(item.Name, ZTn.BNet.D3.Items.Item.CreateFromTooltipParams(item.TooltipParams).Attributes);
                     t_item.Image = D3Api.GetItemIcon(item.Icon, "large").Bytes;
+
+                    //if(!File.Exists("~/Images/" + item.Name))
+                    //{
+                        
+                    //}
                 }
             }
             else
@@ -192,6 +275,38 @@ namespace DataManagement
             }
 
             return t_item;
+        }
+        private AC_Skill[] RetrieveSkills(ZTn.BNet.D3.Heroes.HeroSkills hero_skills)
+        {
+            AC_Skill[] t_skills = new AC_Skill[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                if(i < 6)
+                {
+                    if (hero_skills.Active[i].Skill != null && hero_skills.Active[i].Rune != null)
+                    {
+                        t_skills[i] = new AC_Skill(hero_skills.Active[i].Skill.Name + ": " + hero_skills.Active[i].Rune.Name, hero_skills.Active[i].Rune.Description);
+                    }
+                    else
+                    {
+                        t_skills[i] = new AC_Skill("Empty", "Empty");
+                    }
+                }
+                else if (i < 10)
+                {
+                    if (hero_skills.Passive[i - 6].Skill != null && hero_skills.Passive[i - 6].Skill.Description != null)
+                    {
+                        t_skills[i] = new AC_Skill(hero_skills.Passive[i - 6].Skill.Name, hero_skills.Passive[i - 6].Skill.Description);
+                    }
+                    else
+                    {
+                        t_skills[i] = new AC_Skill("Empty", "Empty");
+                    }
+                }
+            }
+
+            return t_skills;
         }
     }
 }

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 
 <link href="../styles/styles.css" rel="stylesheet" />
+<link href="../styles/gui.css" rel="stylesheet" />
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -11,13 +12,37 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <script type="text/javascript">
+        function logg(){
+            var txt = '<%=uxLoginStatus.ClientID%>';
+            var arg = document.getElementById(txt);
+            if (arg!=null)
+            {
+                arg.click();
+            }
+        }
+    </script>
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
         <div class="main_body">
             <header id="mpHeader">
                 <asp:ContentPlaceHolder ID="cHeader" runat="server">
                     <div class="header">
-                        <h1 style="display: inline-block;">D3 BuildMark</h1>
+                        <h1 class="logo">D3 BuildMark</h1>
                         <asp:TextBox ID="uxSearch" CssClass="searchbox" runat="server"></asp:TextBox>
+                        <div class="login">
+                            <asp:LoginStatus ID="uxLoginStatus" LoginText="" LogoutText="" Width=0 Height=0 runat="server" />
+                            <asp:LoginView ID="uxLoginView" runat="server">
+                                <AnonymousTemplate>
+                                    <input id="uxLoginButton" class="log_button" type=button onclick="logg();" value="Login" runat=server/>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    <input id="uxLogoutButton" type=button onclick="logg();" value="Logout" runat=server/>
+                                    <asp:LoginName ID="uxLoginName" runat="server" />
+                                    <asp:Button ID="uxEditProfile" Text="Profile" OnClick="uxEditProfile_Click" runat="server" />
+                                </LoggedInTemplate>
+                            </asp:LoginView>
+                        </div>
                     </div>
                 </asp:ContentPlaceHolder>
             </header>
@@ -35,7 +60,6 @@
                     <h1>Master Page Content Default</h1>
                 </asp:ContentPlaceHolder>
             </main>
-            <div class="push"></div>
         
             <footer id="mpFooter">
                 <asp:ContentPlaceHolder ID="cFooter" runat="server">

@@ -8,12 +8,10 @@
 }
 
 h1{
-    position:fixed;
     color: white;
     margin: 0px;
     padding: 0px;
     margin-left: .5em;
-    left: 0;
 }
 
 h2{
@@ -22,7 +20,20 @@ h2{
 }
 
 main{
-
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    width: 1024px;
+    height: 816px;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:2em;
+    margin-bottom:2em;
+    border-radius: 8px;
 }
 
 header{
@@ -30,11 +41,53 @@ header{
     display: inline-block;
     text-align: center;
     width: 100%;
-    height: 100%;
+    height: 4em;
     background: black;
     background: linear-gradient(to top, #202020, #808080);
-    margin: 1em;
-    margin:0 auto;
+    /*margin: .5em;
+    margin:0 auto;*/
+}
+
+.logo{
+    display: inline-block;
+    float: left;
+    margin-top: .4em;
+}
+
+.login{
+    display: inline-block;
+    float: right;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: .6em;
+    height: 2.3em;
+}
+.login input{
+    display: inline-block;
+}
+.login span{
+    display: inline-block;
+    margin-top: .4em;
+}
+
+.searchbox{
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+    margin-left: 3em;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    width: 24em;
+    height: 2.3em;
+}
+
+.log_button{
+    vertical-align: top;
+    width: 5em;
+    height: 2.3em;
+    font: bold;
+    margin-top: 1.2em;
 }
 
 footer{
@@ -43,16 +96,89 @@ footer{
     margin: .5em;
 }
 
-.searchbox{
-    display: block;
-    vertical-align: top;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    width: 40%;
-    height: 2.3em;
+.account_settings{
+    display: inline-block;
+    float: left;
+    width: 300px;
 }
+
+.edit_profile{
+    width: 100%;
+}
+
+.left_heroes{
+    display: inline-block;
+    border: 1px solid black;
+    text-align: center;
+    float: left;
+    width: 21.4em;
+    height: 30em;
+    margin-top: 1em;
+}
+.right_heroes{
+    display: inline-block;
+    border: 1px solid black;
+    text-align: center;
+    float: right;
+    width: 21.4em;
+    height: 30em;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.edit_hero{
+    display: inline-block;
+    width: 90%;
+}
+.edit_hero span{
+    padding-left: 1em;
+    float: left;
+}
+.edit_hero a{
+    margin-right:1em;
+    float: right;
+}
+.edit_hero input{
+    margin-right:1em;
+    float: right;
+}
+
+.left_label{
+    display: inline-block;
+    float: left;
+    text-align: right;
+    width: 10.35em;
+}
+
+.left_button{
+    display: inline-block;
+    float: right;
+    margin-top: .5em;
+    margin-right: .1em;
+}
+
+.center_title{
+    display: inline-block;
+    text-align: center;
+    font-weight: bolder;
+    padding: 1em;
+}
+
+
+.right_button{
+    display: inline-block;
+    float: left;
+    margin-top: .3em;
+}
+
+.right_content{
+    display: inline-block;
+    font-weight: bold;
+    text-align: left;
+    width: 15em;
+    float: left;
+}
+
 
 .attribute{
     display: block;
@@ -74,6 +200,11 @@ footer{
 }
 
 .nametext{
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.buildtext{
     font-size: 1.5em;
 }
 

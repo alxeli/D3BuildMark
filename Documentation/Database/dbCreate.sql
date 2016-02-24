@@ -2,6 +2,8 @@
 --2 run aspnet_regsql on D3BuildMark db
 --3 run stored procs script
 --4 run member connect script
+
+--no longer need to do this unless running DataMgmtTestApp
 --5 register new user 
 --5 retrieve GUID from db
 --6 update test code with this GUID
@@ -24,6 +26,8 @@ CREATE TABLE Skill
 	Name			varchar(60)		NOT NULL,
 	Description		varchar(200)	NOT NULL
 );
+--ALTER TABLE Skill
+--	DROP CONSTRAINT unique_S;
 ALTER TABLE Skill
 	ADD CONSTRAINT unique_S UNIQUE(Name, Description);
 
@@ -49,6 +53,8 @@ CREATE TABLE Item
 	Attributes		varchar(500)	NOT NULL
 );
 
+--ALTER TABLE Item
+--	DROP CONSTRAINT unique_I;
 ALTER TABLE Item
 	ADD CONSTRAINT unique_I UNIQUE(Name, Attributes);
 
@@ -91,7 +97,7 @@ CREATE TABLE UserProfile
 CREATE TABLE Hero
 (
 	HeroID			int				CONSTRAINT	Hero_PK				PRIMARY KEY IDENTITY,
-	UserID			int				CONSTRAINT	User_FK_UP			REFERENCES UserProfile(UserID),
+	UserID			int				CONSTRAINT	User_FK_UP			REFERENCES UserProfile(UserID) ON DELETE CASCADE,
 	HeroName		varchar(12)		NOT NULL,
 	HeroClass		varchar(12)		NOT NULL
 );
@@ -99,10 +105,10 @@ CREATE TABLE Hero
 CREATE TABLE BuildSnapshot
 (
 	BuildSnapshotID	int				CONSTRAINT	BuildSnapshot_PK	PRIMARY KEY IDENTITY,
-	HeroID			int				CONSTRAINT	Hero_FK_BS			REFERENCES Hero(HeroID),
-	BuildMarkID		int				CONSTRAINT	BuildMark_FK_BS		REFERENCES BuildMark(BuildMarkID),
-	SkillListID		int				CONSTRAINT	SkillList_FK_BS		REFERENCES SkillList(SkillListID),
-	ItemListID		int				CONSTRAINT	ItemList_FK_BS		REFERENCES ItemList(ItemListID),
+	HeroID			int				CONSTRAINT	Hero_FK_BS			REFERENCES Hero(HeroID) ON DELETE CASCADE,
+	BuildMarkID		int				CONSTRAINT	BuildMark_FK_BS		REFERENCES BuildMark(BuildMarkID) ON DELETE CASCADE,
+	SkillListID		int				CONSTRAINT	SkillList_FK_BS		REFERENCES SkillList(SkillListID) ON DELETE CASCADE,
+	ItemListID		int				CONSTRAINT	ItemList_FK_BS		REFERENCES ItemList(ItemListID) ON DELETE CASCADE,
 	BuildName		varchar(30)		NOT NULL
 );
 

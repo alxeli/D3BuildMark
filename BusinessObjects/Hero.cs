@@ -14,6 +14,7 @@ namespace BusinessObjects
         private string m_name;
         private string m_class;
         private List<AC_BuildSnapshot> m_build_snapshots;
+        private bool m_is_stored;
 
         public AC_Hero()
         {
@@ -42,6 +43,11 @@ namespace BusinessObjects
         {
             get { return m_build_snapshots; }
             set { m_build_snapshots = value; }
+        }
+        public bool IsStored
+        {
+            get { return m_is_stored; }
+            set { m_is_stored = value; }
         }
     }
 }

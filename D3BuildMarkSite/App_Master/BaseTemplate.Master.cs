@@ -13,5 +13,10 @@ namespace D3BuildMarkSite.App_Master
         {
 
         }
+
+        protected void uxEditProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Users/AccountSettings.aspx");
+        }
     }
 }

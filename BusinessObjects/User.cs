@@ -22,11 +22,24 @@ namespace BusinessObjects
             m_name = name;
             m_profile = new AC_Profile();
         }
+        public AC_User(string name, string battletag)
+        {
+            m_name = name;
+            m_profile = new AC_Profile();
+            m_profile.BattleTag = battletag;
+        }
         public AC_User(Guid id, string name)
         {
             m_id = id;
             m_name = name;
             m_profile = new AC_Profile();
+        }
+        public AC_User(Guid id, string name, string battletag)
+        {
+            m_id = id;
+            m_name = name;
+            m_profile = new AC_Profile();
+            m_profile.BattleTag = battletag;
         }
 
         public Guid GUID

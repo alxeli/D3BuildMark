@@ -23,19 +23,19 @@ namespace BusinessObjects
             m_battletag = null;
             m_build_mark = new AC_BuildMark();
             m_items = new Dictionary<string, AC_Item>();
-            m_items.Add("Head", null);
-            m_items.Add("Neck", null);
-            m_items.Add("Shoulders", null);
-            m_items.Add("Gloves", null);
-            m_items.Add("Chest", null);
-            m_items.Add("Bracers", null);
-            m_items.Add("Belt", null);
-            m_items.Add("LeftRing", null);
-            m_items.Add("RightRing", null);
-            m_items.Add("Pants", null);
-            m_items.Add("Boots", null);
-            m_items.Add("LeftHand", null);
-            m_items.Add("RightHand", null);
+            m_items.Add("Head", new AC_Item());
+            m_items.Add("Neck", new AC_Item());
+            m_items.Add("Shoulders", new AC_Item());
+            m_items.Add("Gloves", new AC_Item());
+            m_items.Add("Chest", new AC_Item());
+            m_items.Add("Bracers", new AC_Item());
+            m_items.Add("Belt", new AC_Item());
+            m_items.Add("LeftRing", new AC_Item());
+            m_items.Add("RightRing", new AC_Item());
+            m_items.Add("Pants", new AC_Item());
+            m_items.Add("Boots", new AC_Item());
+            m_items.Add("LeftHand", new AC_Item());
+            m_items.Add("RightHand", new AC_Item());
             m_skills = new AC_Skill[10];
             for(int i=0; i<10; i++)
             {
@@ -48,19 +48,19 @@ namespace BusinessObjects
             m_battletag = null;
             m_build_mark = new AC_BuildMark();
             m_items = new Dictionary<string, AC_Item>();
-            m_items.Add("Head", null);
-            m_items.Add("Neck", null);
-            m_items.Add("Shoulders", null);
-            m_items.Add("Gloves", null);
-            m_items.Add("Chest", null);
-            m_items.Add("Bracers", null);
-            m_items.Add("Belt", null);
-            m_items.Add("LeftRing", null);
-            m_items.Add("RightRing", null);
-            m_items.Add("Pants", null);
-            m_items.Add("Boots", null);
-            m_items.Add("LeftHand", null);
-            m_items.Add("RightHand", null);
+            m_items.Add("Head", new AC_Item());
+            m_items.Add("Neck", new AC_Item());
+            m_items.Add("Shoulders", new AC_Item());
+            m_items.Add("Gloves", new AC_Item());
+            m_items.Add("Chest", new AC_Item());
+            m_items.Add("Bracers", new AC_Item());
+            m_items.Add("Belt", new AC_Item());
+            m_items.Add("LeftRing", new AC_Item());
+            m_items.Add("RightRing", new AC_Item());
+            m_items.Add("Pants", new AC_Item());
+            m_items.Add("Boots", new AC_Item());
+            m_items.Add("LeftHand", new AC_Item());
+            m_items.Add("RightHand", new AC_Item());
             m_skills = new AC_Skill[10];
             for (int i = 0; i < 10; i++)
             {
@@ -73,19 +73,19 @@ namespace BusinessObjects
             m_battletag = battletag;
             m_build_mark = new AC_BuildMark();
             m_items = new Dictionary<string, AC_Item>();
-            m_items.Add("Head", null);
-            m_items.Add("Neck", null);
-            m_items.Add("Shoulders", null);
-            m_items.Add("Gloves", null);
-            m_items.Add("Chest", null);
-            m_items.Add("Bracers", null);
-            m_items.Add("Belt", null);
-            m_items.Add("LeftRing", null);
-            m_items.Add("RightRing", null);
-            m_items.Add("Pants", null);
-            m_items.Add("Boots", null);
-            m_items.Add("LeftHand", null);
-            m_items.Add("RightHand", null);
+            m_items.Add("Head", new AC_Item());
+            m_items.Add("Neck", new AC_Item());
+            m_items.Add("Shoulders", new AC_Item());
+            m_items.Add("Gloves", new AC_Item());
+            m_items.Add("Chest", new AC_Item());
+            m_items.Add("Bracers", new AC_Item());
+            m_items.Add("Belt", new AC_Item());
+            m_items.Add("LeftRing", new AC_Item());
+            m_items.Add("RightRing", new AC_Item());
+            m_items.Add("Pants", new AC_Item());
+            m_items.Add("Boots", new AC_Item());
+            m_items.Add("LeftHand", new AC_Item());
+            m_items.Add("RightHand", new AC_Item());
             m_skills = new AC_Skill[10];
             for (int i = 0; i < 10; i++)
             {

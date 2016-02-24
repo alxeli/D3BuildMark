@@ -3,42 +3,142 @@
     padding: 0;
 }
 
-.snapshot{
-    box-sizing: border-box;
+
+
+.snapshot_left{
+    display: inline-block;
     border: solid #000000 1px;
+    float: left;
     margin: 1em;
     padding: 1em;
-    width: 375px;
-    height: 100%;    
+    width: 342px;
+    height: 750px;    
+    background-color: aliceblue;
+}
+.snapshot_right{
+    display: inline-block;
+    border: solid #000000 1px;
+    float: right;
+    margin: 1em;
+    padding: 1em;
+    width: 342px;
+    height: 750px;    
     background-color: aliceblue;
 }
 
 .item_summary{
-    position: absolute;
-    box-sizing: border-box;
+    display: inline-block;
     border: solid #000000 1px;
     float: left;
     top: 63px;
     left: 390px;
     margin: 1em;
+    margin-left: 0em;
     padding: 1em;
-    width: 470px;
+    width: 312px;
     height: 400px;
     background-color: aliceblue;
 }
 
-.big_textbox{
-    height: 100%;
-    width: 100%;
+.big_textbox_old{
+    font-size: .85em;
+    padding: 1em;
+    height: 94%;
+    width: 93%;
 }
+.big_textbox{
+    display: none;
+    position: relative;
+    font-size: .85em;
+    padding: 1em;
+    width: 312px;
+    height: 400px;
+}
+.neck_box{
+    left: calc(216px + 64px);
+    top: 13px;
+}
+.shoulders_box{
+    left: calc(53px + 64px);
+    top: 13px;
+}
+.bracers_box{
+    left: calc(243px + 64px);
+    top: 13px;
+}
+.belt_box{
+    left: calc(130px + 75px);
+    top: 13px;
+}
+.leftring_box{
+    left: calc(27px + 64px);
+    top: 13px;
+}
+.rightring_box{
+    left: calc(243px + 64px);
+    top: 13px;
+}
+.pants_box{
+    left: calc(135px + 64px);
+    top: 13px;
+}
+.boots_box{
+    left: calc(135px + 64px);
+    top: 13px;
+}
+.lefthand_box{
+    left: calc(27px + 64px);
+    top: 13px;
+}
+.righthand_box{
+    left: calc(243px + 64px);
+    top: 13px;
+}
+.chest_box{
+    left: calc(126px + 82px);
+    top: 13px;
+}
+.gloves_box{
+    left: calc(27px + 64px);
+    top: 13px;
+}
+.head_box{
+    left: calc(135px + 64px);
+    top: 13px;
+}
+
+.attributes{
+    position: absolute;
+    width: 470px;
+    height: 400px;
+}
+
+.headatt{
+    top: 50px;
+    left: 300px;
+}
+
+.neckatt{
+    position: absolute;
+    display: block;
+    left: 216px;
+    top: 68px;
+    width: 400px;
+    height: 600px;
+}
+
 
 .images{
     position: relative;    
+    left: 0;
+    right: 0;
     display: inline-block;
     border: solid #000000 1px;
     margin-top: 1em;
     width: 340px;
     height: 450px;
+    margin-right:auto;
+    margin-left:auto;
     background-color: #505050;
 }
 
@@ -46,7 +146,10 @@
     position: absolute;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
+    overflow: visible;
 }
 
 .item{
@@ -79,46 +182,46 @@
 
 .gloves{
     left: 27px;
-    top: 137px;
+    top: 143px;
     width: 64px;
     height: 86px;
     overflow: visible;
 }
 
 .chest{
-    left: 135px;
+    left: 126px;
     top: 89px;
-    width: 64px;
+    width: 82px;
     height: 113px;
 }
 
 .bracers{
     left: 243px;
-    top: 137px;
+    top: 143px;
     width: 64px;
     height: 86px;
     overflow: visible;
 }
 
 .belt{
-    left: 135px;
+    left: 130px;
     top: 208px;
-    width: 64px;
+    width: 75px;
     height: 32px;
 }
 
 .leftring{
     left: 27px;
-    top: 228px;
+    top: 239px;
     width: 64px;
-    height: 64px;
+    height: 48px;
 }
 
 .rightring{
     left: 243px;
-    top: 228px;
+    top: 239px;
     width: 64px;
-    height: 64px;
+    height: 48px;
 }
 
 .pants{

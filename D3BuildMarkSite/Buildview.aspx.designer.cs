@@ -13,12 +13,12 @@ namespace D3BuildMarkSite {
     public partial class Buildview {
         
         /// <summary>
-        /// uxBuildSnapshotView control.
+        /// uxAltBuildSnapshotView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::D3BuildMarkSite.Controls.uxBuildSnapshotView uxBuildSnapshotView;
+        protected global::D3BuildMarkSite.Controls.ViewBuildSnapshotAlt uxAltBuildSnapshotView;
     }
 }

@@ -7,8 +7,7 @@
 <%--<asp:Content ID="Content3" ContentPlaceHolderID="cNav" runat="server">
 </asp:Content>--%>
 <asp:Content ID="Content4" ContentPlaceHolderID="cContent" runat="server">
-    <asp:LoginStatus ID="uxLoginStatus" runat="server" />
-    <asp:Button ID="uxViewBuildSnapshot" OnClick="uxViewBuildSnapshot_Click" Text="Test View Snapshot" runat="server" />
+    <%--<asp:Button ID="uxViewBuildSnapshot" OnClick="uxViewBuildSnapshot_Click" Text="Test View Snapshot" runat="server" />--%>
 </asp:Content>
 <%--<asp:Content ID="Content5" ContentPlaceHolderID="cFooter" runat="server">
 </asp:Content>--%>

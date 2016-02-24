@@ -38,6 +38,7 @@ namespace BusinessObjects
         {
             m_name = null;
             m_attributes = new List<string>();
+            m_image = null;
         }
         public AC_Item(string name)
         {
@@ -49,25 +50,42 @@ namespace BusinessObjects
             m_name = name;
             m_attributes = attributes;
         }
+        public AC_Item(string name, string attributes)
+        {
+            m_name = name;
+            m_attributes = new List<string>();
+            string[] lines = attributes.Split(new string[] { "\n" }, StringSplitOptions.None);
+            foreach(string s in lines)
+            {
+                if(s != "")
+                {
+                    m_attributes.Add(s);
+                }
+            }
+        }
         public AC_Item(string name, ZTn.BNet.D3.Items.ItemTextAttributes attributes)
         {
             m_name = name;
             m_attributes = new List<string>();
 
+            //m_attributes.Add("\nPrimary: \n");
             m_attributes.Add("Primary: ");
             foreach (ItemTextAttribute att in attributes.Primary)
             {
                 m_attributes.Add(att.Text);
+                //m_attributes.Add("\n");
             }
             m_attributes.Add("Secondary: ");
             foreach (ItemTextAttribute att in attributes.Secondary)
             {
                 m_attributes.Add(att.Text);
+                //m_attributes.Add("\n");
             }
             m_attributes.Add("Passive: ");
             foreach (ItemTextAttribute att in attributes.Passive)
             {
                 m_attributes.Add(att.Text);
+                //m_attributes.Add("\n");
             }
 
         }
@@ -83,9 +101,13 @@ namespace BusinessObjects
             {
                 StringBuilder attributes = new StringBuilder();
 
-                foreach(string text in m_attributes)
+                foreach (string text in m_attributes)
                 {
-                    if (text == "Primary: " || text == "Secondary: " || text == "Passive: ")
+                    //if(text == "Primary: ")
+                    //{
+                    //    attributes.Append("\n" + text);
+                    //}
+                    if(text == "Secondary: " || text == "Passive: ")
                     {
                         attributes.Append("\n\n" + text);
                     }
@@ -94,7 +116,6 @@ namespace BusinessObjects
                         attributes.Append("\n" + text);
                     }
                 }
-
                 return attributes.ToString();
             }
             //set { m_attributes = value; }

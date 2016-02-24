@@ -71,9 +71,118 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BuildCompareView.aspx" />
     <Content Include="Buildview.aspx" />
-    <Content Include="Controls\uxBuildSnapshotView.ascx" />
+    <Content Include="Controls\EditHero.ascx" />
+    <Content Include="Controls\EditProfile.ascx" />
+    <Content Include="Controls\ViewBuildSnapshot.ascx" />
+    <Content Include="Controls\ViewBuildSnapshotAlt.ascx" />
     <Content Include="default.aspx" />
+    <Content Include="Images\Accursed Visage.png" />
+    <Content Include="Images\Binding of the Lost.png" />
+    <Content Include="Images\Bracers of Destruction.png" />
+    <Content Include="Images\Bul-Kathos%27s Solemn Vow.png" />
+    <Content Include="Images\Bul-Kathos%27s Warrior Blood.png" />
+    <Content Include="Images\Cage of the Hellborn.png" />
+    <Content Include="Images\Cesar’s Memento.png" />
+    <Content Include="Images\Convention of Elements.png" />
+    <Content Include="Images\Crashing Rain.png" />
+    <Content Include="Images\Crown of the Invoker.png" />
+    <Content Include="Images\Cuirass of the Wastes.png" />
+    <Content Include="Images\Dashing Pauldrons of Despair.png" />
+    <Content Include="Images\Dead Man%27s Legacy.png" />
+    <Content Include="Images\Depth Diggers.png" />
+    <Content Include="Images\Eight-Demon Boots.png" />
+    <Content Include="Images\Engulfing Gear.png" />
+    <Content Include="Images\Fiendish Grips.png" />
+    <Content Include="Images\Fire Walkers.png" />
+    <Content Include="Images\Fists of Thunder.png" />
+    <Content Include="Images\Flooding Course.png" />
+    <Content Include="Images\Focus.png" />
+    <Content Include="Images\Frostburn.png" />
+    <Content Include="Images\Gauntlet of the Wastes.png" />
+    <Content Include="Images\Gesture of Orpheus.png" />
+    <Content Include="Images\Greedy Amice.png" />
+    <Content Include="Images\Gungdo Gear.png" />
+    <Content Include="Images\Heart of the Crashing Wave.png" />
+    <Content Include="Images\Hell Walkers.png" />
+    <Content Include="Images\Hellfire Amulet.png" />
+    <Content Include="Images\Helm of the Wastes.png" />
+    <Content Include="Images\Immortal King%27s Tribal Binding.png" />
+    <Content Include="Images\In-geom.png" />
+    <Content Include="Images\Inna%27s Favor.png" />
+    <Content Include="Images\Inna%27s Hold.png" />
+    <Content Include="Images\Inna%27s Vast Expanse.png" />
+    <Content Include="Images\Iron Bindings of Invasion.png" />
+    <Content Include="Images\Irontoe Mudsputters.png" />
+    <Content Include="Images\Justice Lantern.png" />
+    <Content Include="Images\Kyoshiro%27s Blade.png" />
+    <Content Include="Images\Kyoshiro%27s Soul.png" />
+    <Content Include="Images\Lefebvre’s Soliloquy.png" />
+    <Content Include="Images\Leoric%27s Crown.png" />
+    <Content Include="Images\Lion’s Claw.png" />
+    <Content Include="Images\Little Rogue.png" />
+    <Content Include="Images\Lord Greenstone%27s Fan.png" />
+    <Content Include="Images\Mantle of the Upside-Down Sinners.png" />
+    <Content Include="Images\Mempo of Twilight.png" />
+    <Content Include="Images\Merchant%27s Grips.png" />
+    <Content Include="Images\Obsidian Ring of the Zodiac.png" />
+    <Content Include="Images\Oculus Ring.png" />
+    <Content Include="Images\Odyssey%27s End.png" />
+    <Content Include="Images\Pauldrons of the Wastes.png" />
+    <Content Include="Images\Pig Sticker.png" />
+    <Content Include="Images\Pinto%27s Pride.png" />
+    <Content Include="Images\placeholder.png" />
+    <Content Include="Images\Raiding Artifact.png" />
+    <Content Include="Images\Ranslor%27s Folly.png" />
+    <Content Include="Images\Reaper%27s Wraps.png" />
+    <Content Include="Images\Renewal of the Invoker.png" />
+    <Content Include="Images\Restraint.png" />
+    <Content Include="Images\Sabaton of the Wastes.png" />
+    <Content Include="Images\Sabatons of Akkhan.png" />
+    <Content Include="Images\Sacred Harness.png" />
+    <Content Include="Images\Scales of the Dancing Serpent.png" />
+    <Content Include="Images\Shenlong%27s Fist of Legend.png" />
+    <Content Include="Images\Shenlong%27s Relentless Assault.png" />
+    <Content Include="Images\Sling Technique.png" />
+    <Content Include="Images\Solanium.png" />
+    <Content Include="Images\Spirit Guards.png" />
+    <Content Include="Images\Striders of Destiny.png" />
+    <Content Include="Images\Strongarm Bracers.png" />
+    <Content Include="Images\Sunwuko%27s Balance.png" />
+    <Content Include="Images\Sunwuko%27s Crown.png" />
+    <Content Include="Images\Sunwuko%27s Leggings.png" />
+    <Content Include="Images\Sunwuko%27s Paws.png" />
+    <Content Include="Images\Sunwuko%27s Shines.png" />
+    <Content Include="Images\Sunwuko%27s Soul.png" />
+    <Content Include="Images\Tal Rasha%27s Brace.png" />
+    <Content Include="Images\Tal Rasha%27s Relentless Pursuit.png" />
+    <Content Include="Images\Tal Rasha%27s Stride.png" />
+    <Content Include="Images\Tal Rasha%27s Unwavering Glare.png" />
+    <Content Include="Images\Tasset of the Wastes.png" />
+    <Content Include="Images\The Crudest Boots.png" />
+    <Content Include="Images\The Eye of the Storm.png" />
+    <Content Include="Images\The Final Witness.png" />
+    <Content Include="Images\The Shadow%27s Burden.png" />
+    <Content Include="Images\The Shadow%27s Coil.png" />
+    <Content Include="Images\The Shadow%27s Mask.png" />
+    <Content Include="Images\The Traveler%27s Pledge.png" />
+    <Content Include="Images\The Witching Hour.png" />
+    <Content Include="Images\Thunderfury, Blessed Blade of the Windseeker.png" />
+    <Content Include="Images\Thundergod%27s Vigor.png" />
+    <Content Include="Images\Tyrael%27s Might.png" />
+    <Content Include="Images\Tzo Krin%27s Gaze.png" />
+    <Content Include="Images\Uliana%27s Burden.png" />
+    <Content Include="Images\Uliana%27s Destiny.png" />
+    <Content Include="Images\Uliana%27s Fury.png" />
+    <Content Include="Images\Uliana%27s Heart.png" />
+    <Content Include="Images\Uliana%27s Spirit.png" />
+    <Content Include="Images\Uliana%27s Strength.png" />
+    <Content Include="Images\Unholy Plates.png" />
+    <Content Include="Images\Unsanctified Shoulders.png" />
+    <Content Include="Images\Velvet Camaral.png" />
+    <Content Include="Images\Wrath of the Bone King.png" />
+    <Content Include="jquery-1.12.0.js" />
     <Content Include="packages.config" />
     <Content Include="App_Master\BaseTemplate.Master" />
     <None Include="Web.Debug.config">
@@ -86,6 +195,7 @@
   <ItemGroup>
     <Content Include="styles\gui.css" />
     <Content Include="styles\styles.css" />
+    <Content Include="Users\AccountSettings.aspx" />
     <Content Include="Users\Login.aspx" />
     <Content Include="Users\Register.aspx" />
     <Content Include="Web.config">
@@ -100,6 +210,13 @@
     <Compile Include="App_Master\BaseTemplate.Master.designer.cs">
       <DependentUpon>BaseTemplate.Master</DependentUpon>
     </Compile>
+    <Compile Include="BuildCompareView.aspx.cs">
+      <DependentUpon>BuildCompareView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuildCompareView.aspx.designer.cs">
+      <DependentUpon>BuildCompareView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Buildview.aspx.cs">
       <DependentUpon>Buildview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,12 +224,33 @@
     <Compile Include="Buildview.aspx.designer.cs">
       <DependentUpon>Buildview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\uxBuildSnapshotView.ascx.cs">
-      <DependentUpon>uxBuildSnapshotView.ascx</DependentUpon>
+    <Compile Include="Controls\EditHero.ascx.cs">
+      <DependentUpon>EditHero.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\uxBuildSnapshotView.ascx.designer.cs">
-      <DependentUpon>uxBuildSnapshotView.ascx</DependentUpon>
+    <Compile Include="Controls\EditHero.ascx.designer.cs">
+      <DependentUpon>EditHero.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditProfile.ascx.cs">
+      <DependentUpon>EditProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\EditProfile.ascx.designer.cs">
+      <DependentUpon>EditProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewBuildSnapshot.ascx.cs">
+      <DependentUpon>ViewBuildSnapshot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewBuildSnapshot.ascx.designer.cs">
+      <DependentUpon>ViewBuildSnapshot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewBuildSnapshotAlt.ascx.cs">
+      <DependentUpon>ViewBuildSnapshotAlt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewBuildSnapshotAlt.ascx.designer.cs">
+      <DependentUpon>ViewBuildSnapshotAlt.ascx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -122,6 +260,13 @@
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\AccountSettings.aspx.cs">
+      <DependentUpon>AccountSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\AccountSettings.aspx.designer.cs">
+      <DependentUpon>AccountSettings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Users\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,6 +292,7 @@
       <Name>DataManagement</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

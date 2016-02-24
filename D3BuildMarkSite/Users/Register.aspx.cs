@@ -28,6 +28,7 @@ namespace D3BuildMarkSite.Users
 
             //add new user to the database based on the GUID
             db_manager.CreateUser(new_user);
+            db_manager.CreateProfile(new_user);
 
             //save user info in session
             Session["User"] = new_user;
