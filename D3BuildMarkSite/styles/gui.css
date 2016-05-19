@@ -1,29 +1,29 @@
 ﻿body {
-    margin: 0;
-    padding: 0;
 }
-
-
 
 .snapshot_left{
+    position: relative;
     display: inline-block;
     border: solid #000000 1px;
+    border-radius: 8px;
     float: left;
-    margin: 1em;
-    padding: 1em;
-    width: 342px;
-    height: 750px;    
-    background-color: aliceblue;
+    margin: 0em;
+    padding: .5em;
+    width: 610px;
+    height: 560px;    
+    background-color: #eee;
 }
+
 .snapshot_right{
     display: inline-block;
     border: solid #000000 1px;
+    border-radius: 8px;
     float: right;
-    margin: 1em;
-    padding: 1em;
-    width: 342px;
-    height: 750px;    
-    background-color: aliceblue;
+    margin: 0em;
+    padding: .5em;
+    width: 610px;
+    height: 560px;    
+    background-color: #eee;
 }
 
 .item_summary{
@@ -37,7 +37,8 @@
     padding: 1em;
     width: 312px;
     height: 400px;
-    background-color: aliceblue;
+    color: blue;
+    background-color: black;
 }
 
 .big_textbox_old{
@@ -53,57 +54,59 @@
     padding: 1em;
     width: 312px;
     height: 400px;
+    color: cornflowerblue;
+    background-color: black;
 }
 .neck_box{
-    left: calc(216px + 64px);
+    left: calc(216px + 64px - 399px);
     top: 13px;
 }
 .shoulders_box{
-    left: calc(53px + 64px);
+    left: calc(53px + 64px - 399px);
     top: 13px;
 }
 .bracers_box{
-    left: calc(243px + 64px);
+    left: calc(243px + 64px - 399px);
     top: 13px;
 }
 .belt_box{
-    left: calc(130px + 75px);
+    left: calc(130px + 75px - 410px);
     top: 13px;
 }
 .leftring_box{
-    left: calc(27px + 64px);
+    left: calc(27px + 64px - 399px);
     top: 13px;
 }
 .rightring_box{
-    left: calc(243px + 64px);
+    left: calc(243px + 64px - 399px);
     top: 13px;
 }
 .pants_box{
-    left: calc(135px + 64px);
+    left: calc(135px + 64px - 399px);
     top: 13px;
 }
 .boots_box{
-    left: calc(135px + 64px);
+    left: calc(135px + 64px - 399px);
     top: 13px;
 }
 .lefthand_box{
-    left: calc(27px + 64px);
+    left: calc(27px + 64px - 399px);
     top: 13px;
 }
 .righthand_box{
-    left: calc(243px + 64px);
+    left: calc(243px + 64px - 399px);
     top: 13px;
 }
 .chest_box{
-    left: calc(126px + 82px);
+    left: calc(126px + 82px - 417px);
     top: 13px;
 }
 .gloves_box{
-    left: calc(27px + 64px);
+    left: calc(27px + 64px - 399px);
     top: 13px;
 }
 .head_box{
-    left: calc(135px + 64px);
+    left: calc(135px + 64px - 399px);
     top: 13px;
 }
 
@@ -130,8 +133,7 @@
 
 .images{
     position: relative;    
-    left: 0;
-    right: 0;
+    float: right;
     display: inline-block;
     border: solid #000000 1px;
     margin-top: 1em;
@@ -139,7 +141,7 @@
     height: 450px;
     margin-right:auto;
     margin-left:auto;
-    background-color: #505050;
+    background-color: #202020;
 }
 
 .item_image{
@@ -253,19 +255,30 @@
     height: 128px;
 }
 
+
+.title{
+    display: inline-block;
+    margin-top: 1em;
+    float: left;
+    width: 250px;
+    height: auto;
+    color: cornflowerblue;
+}
+
 .left{
     display: inline-block;
     margin-top: 1em;
     float: left;
     border: solid #000000 1px;
-    width: 70%;
+    width: 250px;
     height: auto;
 }
 
 .right{
-    float: right;
+    float: left;
     margin-top: 1em;
     border: solid #000000 1px;
-    width: 25%;
+    width: 234px;
     height: auto;
+    padding: .5em;
 }

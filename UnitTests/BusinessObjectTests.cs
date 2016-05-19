@@ -161,7 +161,7 @@ namespace UnitTests
 
             AC_BuildMark buildmark = new AC_BuildMark();
 
-            Assert.AreEqual(expected_score, buildmark.Score);
+            Assert.AreEqual(expected_score, buildmark.ScoreSingle);
             Assert.AreEqual(expected_damage, buildmark.Damage);
             Assert.AreEqual(expected_toughness, buildmark.Toughness);
             Assert.AreEqual(expected_recovery, buildmark.Recovery);

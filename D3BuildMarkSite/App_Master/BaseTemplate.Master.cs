@@ -11,12 +11,18 @@ namespace D3BuildMarkSite.App_Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            uxSearch.Attributes.Add("onkeypress", "uxSearchButton_Click()");
         }
 
         protected void uxEditProfile_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Users/AccountSettings.aspx");
+        }
+
+        protected void uxSearchButton_Click(object sender, EventArgs e)
+        {
+            Session["SearchString"] = uxSearch.Text;
+            Response.Redirect("~/SearchResults.aspx");
         }
     }
 }

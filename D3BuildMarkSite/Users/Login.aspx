@@ -6,7 +6,9 @@
 <%--<asp:Content ID="Content3" ContentPlaceHolderID="cNav" runat="server">
 </asp:Content>--%>
 <asp:Content ID="Content4" ContentPlaceHolderID="cContent" runat="server">
-    <asp:Login ID="uxLogin" MembershipProvider="SqlMembership" CreateUserText="Register" CreateUserUrl="Register.aspx" runat="server"/>
+    <div class="loginpage">
+        <asp:Login ID="uxLogin" MembershipProvider="SqlMembership" CreateUserText="Register" CreateUserUrl="Register.aspx" runat="server"/>
+    </div>
 </asp:Content>
 <%--<asp:Content ID="Content5" ContentPlaceHolderID="cFooter" runat="server">
 </asp:Content>--%>

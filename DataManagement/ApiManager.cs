@@ -183,6 +183,7 @@ namespace DataManagement
                 if (career != null)
                 {
                     ZTn.BNet.D3.Heroes.Hero t_hero = null;
+                    List<Item> t_items = null;
 
                     //Retrieve the full Hero via API
                     foreach (ZTn.BNet.D3.Heroes.HeroSummary t_sum in career.Heroes)
@@ -192,6 +193,76 @@ namespace DataManagement
                             lock (_api_sync)
                             {
                                 t_hero = ZTn.BNet.D3.Heroes.Hero.CreateFromHeroId(new ZTn.BNet.BattleNet.BattleTag(user.Profile.BattleTag), t_sum.Id);
+                                
+                                //Item special = null;
+                                //Item bracers = null;
+                                //Item feet = null;
+                                //Item hands = null;
+                                //Item head = null;
+                                //Item leftFinger = null;
+                                //Item legs = null;
+                                //Item neck = null;
+                                //Item rightFinger = null;
+                                //Item shoulders = null;
+                                //Item torso = null;
+                                //Item waist = null;
+                                //if (t_hero.Items.Bracers != null)
+                                //{
+                                //    bracers = t_hero.Items.Bracers.GetFullItem();
+                                //}
+                                //if (t_hero.Items.Feet != null)
+                                //{
+                                //    feet = t_hero.Items.Feet.GetFullItem();
+                                //}
+                                //if (t_hero.Items.Hands != null)
+                                //{
+                                //    hands = t_hero.Items.Hands.GetFullItem();
+                                //}
+                                //if (t_hero.Items.Head != null)
+                                //{
+                                //    head = t_hero.Items.Head.GetFullItem();
+                                //}
+                                //if (t_hero.Items.LeftFinger != null)
+                                //{
+                                //    leftFinger = t_hero.Items.LeftFinger.GetFullItem();
+                                //}
+                                //if (t_hero.Items.Legs != null)
+                                //{
+                                //    legs = t_hero.Items.Legs.GetFullItem();
+                                //}
+                                //if (t_hero.Items.Neck != null)
+                                //{
+                                //    neck = t_hero.Items.Neck.GetFullItem();
+                                //}
+                                //if (t_hero.Items.RightFinger != null)
+                                //{
+                                //    rightFinger = t_hero.Items.RightFinger.GetFullItem();
+                                //}
+                                //if (t_hero.Items.Shoulders != null)
+                                //{
+                                //    shoulders = t_hero.Items.Shoulders.GetFullItem();
+                                //}
+                                //if (t_hero.Items.Torso != null)
+                                //{
+                                //    torso = t_hero.Items.Torso.GetFullItem();
+                                //}
+                                //if (t_hero.Items.Waist != null)
+                                //{
+                                //    waist = t_hero.Items.Waist.GetFullItem();
+                                //}
+                                //// If no weapon is set in mainHand, use "naked hand" weapon
+                                //var mainHand = (t_hero.Items.MainHand != null ? t_hero.Items.MainHand.GetFullItem() : D3Calculator.NakedHandWeapon);
+                                //// If no item is set in offHand, use a blank item
+                                //Item offHand;
+                                //if (t_hero.Items.OffHand != null)
+                                //{
+                                //    offHand = t_hero.Items.OffHand.GetFullItem();
+                                //}
+                                //else
+                                //{
+                                //    offHand = D3Calculator.BlankWeapon;
+                                //}
+                                //var allRawItems = new List<Item> { bracers, feet, hands, head, leftFinger, legs, neck, rightFinger, shoulders, torso, waist, mainHand, offHand };
                             }
                         }
                     }

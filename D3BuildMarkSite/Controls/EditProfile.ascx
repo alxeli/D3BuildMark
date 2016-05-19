@@ -7,27 +7,31 @@
 
 <form>
     <div class="edit_profile">
-        <div class="left_label">
-            <asp:Label ID="lblUserName" AssociatedControlID="lblUserNameValue" Text="Username:" runat="server" />
+        <div class="settingspage">
+            <asp:ChangePassword ID="uxChangePassword" MembershipProvider="SqlMembership" runat="server"/>
             <br />
-            <asp:Label ID="lblBattletag" AssociatedControlID="lblBattletagValue" Text="Battletag:" runat="server" />
-            <br />
-            <br />
-            <asp:Label ID="lblUpdateBattletag" AssociatedControlID="uxUpdateBattletag" Text="New Battletag:" runat="server" />
-            <br />
-            <asp:Button ID="uxSaveBattletag" CssClass="left_button" Text="Save Battletag" runat="server" OnClick="uxSaveBattletag_Click" />
-            <br />
-        </div>
-        <div class="right_content">
-            <asp:Label ID="lblUserNameValue" runat="server" />
-            <br />
-            <asp:Label ID="lblBattletagValue" runat="server" />
-            <br />
-            <br />
-            <asp:TextBox ID="uxUpdateBattletag" runat="server" />
-            <br />
-            <asp:Button ID="uxCancelBattletag" CssClass="right_button" Text="Cancel" OnClick="uxCancelBattletag_Click" runat="server" />
-            <br />
+            <div class="left_label">
+                <asp:Label ID="lblUserName" AssociatedControlID="lblUserNameValue" Text="Username:" runat="server" />
+                <br />
+                <asp:Label ID="lblBattletag" AssociatedControlID="lblBattletagValue" Text="Battletag:" runat="server" />
+                <br />
+                <br />
+                <asp:Label ID="lblUpdateBattletag" AssociatedControlID="uxUpdateBattletag" Text="New Battletag:" runat="server" />
+                <br />
+                <asp:Button ID="uxSaveBattletag" CssClass="left_button" Text="Save Battletag" runat="server" OnClick="uxSaveBattletag_Click" />
+                <br />
+            </div>
+            <div class="right_content">
+                <asp:Label ID="lblUserNameValue" runat="server" />
+                <br />
+                <asp:Label ID="lblBattletagValue" runat="server" />
+                <br />
+                <br />
+                <asp:TextBox ID="uxUpdateBattletag" runat="server" />
+                <br />
+                <asp:Button ID="uxCancelBattletag" CssClass="right_button" Text="Cancel" OnClick="uxCancelBattletag_Click" runat="server" />
+                <br />
+            </div>
         </div>
         <div style="clear:both;"></div>
         <div class="left_heroes">

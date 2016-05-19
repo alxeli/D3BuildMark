@@ -26,12 +26,7 @@ namespace D3BuildMarkSite.Controls
             m_hero = (AC_Hero)Session["Hero_0"];
             m_snapshots = (List<AC_BuildSnapshot>)Session["Snapshots_0"];
             c_snapshot = (AC_BuildSnapshot)Session["Snapshot_0"];
-
-            if(!IsPostBack)
-            {
-            }
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -130,13 +125,22 @@ namespace D3BuildMarkSite.Controls
                 uxChestAttributes.Text = c_snapshot.Items["Chest"].Name + "\n" + c_snapshot.Items["Chest"].Attributes;
                 uxGlovesAttributes.Text = c_snapshot.Items["Gloves"].Name + "\n" + c_snapshot.Items["Gloves"].Attributes;
                 uxHeadAttributes.Text = c_snapshot.Items["Head"].Name + "\n" + c_snapshot.Items["Head"].Attributes;
-                
+
+                uxStrength.Text = c_snapshot.BuildMark.Strength.ToString("0,0");
+                uxDexterity.Text = c_snapshot.BuildMark.Dexterity.ToString("0,0");
+                uxIntelligence.Text = c_snapshot.BuildMark.Intelligence.ToString("0,0");
+                uxVitality.Text = c_snapshot.BuildMark.Vitality.ToString("0,0");
+
                 uxDamage.Text = c_snapshot.BuildMark.Damage.ToString("0,0");
                 uxToughness.Text = c_snapshot.BuildMark.Toughness.ToString("0,0");
                 uxRecovery.Text = c_snapshot.BuildMark.Recovery.ToString("0,0");
-                uxPrimaryAttribute.Text = c_snapshot.BuildMark.Primary.ToString("0,0");
-                
-                
+
+                uxLife.Text = c_snapshot.BuildMark.Life.ToString("0,0");
+
+                uxBuildMarkSingle.Text = c_snapshot.BuildMark.ScoreSingle.ToString("0,0");
+                uxBuildMarkMultiple.Text = c_snapshot.BuildMark.ScoreMultiple.ToString("0,0");
+
+
                 #endregion
 
                 #region login specific controls
@@ -212,19 +216,19 @@ namespace D3BuildMarkSite.Controls
                 AC_BuildMark other_buildmark = ((AC_BuildSnapshot)Session["Snapshot_1"]).BuildMark;
                 AC_BuildMark this_buildmark = ((AC_BuildSnapshot)Session["Snapshot_0"]).BuildMark;
 
-                //Set color for primary attribute
-                if (this_buildmark.Primary == other_buildmark.Primary)
-                {
-                    uxPrimaryAttribute.ForeColor = System.Drawing.Color.Black;
-                }
-                else if (this_buildmark.Primary > other_buildmark.Primary)
-                {
-                    uxPrimaryAttribute.ForeColor = System.Drawing.Color.Green;
-                }
-                else
-                {
-                    uxPrimaryAttribute.ForeColor = System.Drawing.Color.Red;
-                }
+                ////Set color for primary attribute
+                //if (this_buildmark.Primary == other_buildmark.Primary)
+                //{
+                //    uxPrimaryAttribute.ForeColor = System.Drawing.Color.Black;
+                //}
+                //else if (this_buildmark.Primary > other_buildmark.Primary)
+                //{
+                //    uxPrimaryAttribute.ForeColor = System.Drawing.Color.Green;
+                //}
+                //else
+                //{
+                //    uxPrimaryAttribute.ForeColor = System.Drawing.Color.Red;
+                //}
 
                 //Set color for Damage
                 if (this_buildmark.Damage == other_buildmark.Damage)
@@ -270,7 +274,7 @@ namespace D3BuildMarkSite.Controls
             }
             else
             {
-                uxPrimaryAttribute.ForeColor = System.Drawing.Color.Black;
+                //uxPrimaryAttribute.ForeColor = System.Drawing.Color.Black;
                 uxDamage.ForeColor = System.Drawing.Color.Black;
                 uxToughness.ForeColor = System.Drawing.Color.Black;
                 uxRecovery.ForeColor = System.Drawing.Color.Black;
@@ -305,7 +309,6 @@ namespace D3BuildMarkSite.Controls
 
             return ret_value;
         }
-
         //Gets the url of an image
         //if there is no item, the image is set to a placeholder image signifying an empty item slot
         private string GetImageUrl(AC_Item item)
@@ -343,7 +346,6 @@ namespace D3BuildMarkSite.Controls
 
             return t_image_url;
         }
-
         protected void uxEditBuildName_Click(object sender, EventArgs e)
         {
             uxSaveBuildName.Visible = true;
@@ -368,7 +370,6 @@ namespace D3BuildMarkSite.Controls
 
             Response.Redirect(Request.RawUrl);
         }
-
         protected void uxImportSnapshot_Click(object sender, EventArgs e)
         {
             //create hero in the database
@@ -380,7 +381,6 @@ namespace D3BuildMarkSite.Controls
 
             Response.Redirect(Request.RawUrl);
         }
-
         protected void uxImportNewSnapshot_Click(object sender, EventArgs e)
         {
             //Import new snapshot via API
@@ -395,14 +395,12 @@ namespace D3BuildMarkSite.Controls
 
             Response.Redirect(Request.RawUrl);
         }
-
         protected void uxVersion_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session["ddl_index"] = uxVersion.SelectedIndex;
 
             Response.Redirect(Request.RawUrl);
         }
-
         protected void uxDeleteSnapshot_Click(object sender, EventArgs e)
         {
             m_snapshots.RemoveAll(a => a.Name == c_snapshot.Name);
@@ -414,9 +412,9 @@ namespace D3BuildMarkSite.Controls
 
             Response.Redirect(Request.RawUrl);
         }
-
         protected void uxHeroName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Session["ddl_index"] = 0;
             Session["Hero_0"] = m_user.Profile.Heroes.Find(a => a.Name == uxHeroName.SelectedValue);
             Session["User_0"] = m_user;
             //Session["Snapshots_0"] = m_snapshots;

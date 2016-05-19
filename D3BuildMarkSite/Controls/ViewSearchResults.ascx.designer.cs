@@ -7,99 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace D3BuildMarkSite.App_Master {
+namespace D3BuildMarkSite.Controls {
     
     
-    public partial class BaseTemplate {
+    public partial class ViewSearchResults {
         
         /// <summary>
-        /// mpHead control.
+        /// lblSearchString control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder mpHead;
+        protected global::System.Web.UI.WebControls.Label lblSearchString;
         
         /// <summary>
-        /// form1 control.
+        /// lblHeroNames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblHeroNames;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// uxHeroNameResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.PlaceHolder uxHeroNameResults;
         
         /// <summary>
-        /// cHeader control.
+        /// lblClassNames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder cHeader;
+        protected global::System.Web.UI.WebControls.Label lblClassNames;
         
         /// <summary>
-        /// uxSearch control.
+        /// uxClassResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxSearch;
+        protected global::System.Web.UI.WebControls.PlaceHolder uxClassResults;
         
         /// <summary>
-        /// uxSearchButton control.
+        /// lblBattletagResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button uxSearchButton;
+        protected global::System.Web.UI.WebControls.Label lblBattletagResults;
         
         /// <summary>
-        /// uxLoginStatus control.
+        /// uxBattletagResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginStatus uxLoginStatus;
-        
-        /// <summary>
-        /// uxLoginView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView uxLoginView;
-        
-        /// <summary>
-        /// cContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder cContent;
-        
-        /// <summary>
-        /// cFooter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder cFooter;
+        protected global::System.Web.UI.WebControls.PlaceHolder uxBattletagResults;
     }
 }

@@ -56,11 +56,16 @@ CREATE TABLE BuildMark
 (
 	BuildMarkID		int				CONSTRAINT	BuildMark_PK		PRIMARY KEY IDENTITY,
 	BuildSnapshotID	int				CONSTRAINT	BuildSnapshot_FK 	REFERENCES BuildSnapshot(BuildSnapshotID),
-	Score			int				NOT NULL,
+	ScoreSingle		int				NOT NULL,
+	ScoreMultiple	int				NOT NULL,
+	Strength		int				NOT NULL,
+	Dexterity		int				NOT NULL,
+	Intelligence	int				NOT NULL,
+	Vitality		int				NOT NULL,
 	Damage			int				NOT NULL,
 	Toughness		int				NOT NULL,
 	Recovery		int				NOT NULL,
-	PrimaryAtt		int				NOT NULL,
+	Life			int				NOT NULL,
 	Date			DateTime		NOT NULL
 );
 

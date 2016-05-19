@@ -12,13 +12,13 @@
         <asp:LoginView ID="uxLoginView" runat="server">
             <AnonymousTemplate>
                 <div id="account_settings">
-                    <asp:literal ID="lblNotLoggedIn" Text="Not Logged In..." runat="server" />
+                    <div class="loginpage">
+                        <asp:Login ID="uxLogin" MembershipProvider="SqlMembership" CreateUserText="Register" CreateUserUrl="Register.aspx" runat="server"/>
+                    </div>
                 </div>
             </AnonymousTemplate>
             <LoggedInTemplate>
                 <div id="account_settings">
-                    <asp:ChangePassword ID="uxChangePassword" MembershipProvider="SqlMembership" runat="server"/>
-                    <br />
                     <uc1:EditProfile ID="uxEditProfile" runat="server" />
                 </div>
                 <div id="main_waiting">

@@ -77,6 +77,8 @@
     <Content Include="Controls\EditProfile.ascx" />
     <Content Include="Controls\ViewBuildSnapshot.ascx" />
     <Content Include="Controls\ViewBuildSnapshotAlt.ascx" />
+    <Content Include="Controls\ViewSearchResult.ascx" />
+    <Content Include="Controls\ViewSearchResults.ascx" />
     <Content Include="default.aspx" />
     <Content Include="Images\Accursed Visage.png" />
     <Content Include="Images\Binding of the Lost.png" />
@@ -182,7 +184,6 @@
     <Content Include="Images\Unsanctified Shoulders.png" />
     <Content Include="Images\Velvet Camaral.png" />
     <Content Include="Images\Wrath of the Bone King.png" />
-    <Content Include="jquery-1.12.0.js" />
     <Content Include="packages.config" />
     <Content Include="App_Master\BaseTemplate.Master" />
     <None Include="Web.Debug.config">
@@ -193,6 +194,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SearchResults.aspx" />
     <Content Include="styles\gui.css" />
     <Content Include="styles\styles.css" />
     <Content Include="Users\AccountSettings.aspx" />
@@ -252,6 +254,20 @@
     <Compile Include="Controls\ViewBuildSnapshotAlt.ascx.designer.cs">
       <DependentUpon>ViewBuildSnapshotAlt.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ViewSearchResult.ascx.cs">
+      <DependentUpon>ViewSearchResult.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewSearchResult.ascx.designer.cs">
+      <DependentUpon>ViewSearchResult.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewSearchResults.ascx.cs">
+      <DependentUpon>ViewSearchResults.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewSearchResults.ascx.designer.cs">
+      <DependentUpon>ViewSearchResults.ascx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -260,6 +276,13 @@
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchResults.aspx.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResults.aspx.designer.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Users\AccountSettings.aspx.cs">
       <DependentUpon>AccountSettings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

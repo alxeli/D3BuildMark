@@ -3,6 +3,7 @@
     margin:0;
     padding:0;
     background-color: #ebebeb;
+    background-color: #f0f0f0;
     /*background: linear-gradient(to right, #bbbbbb, #eeeeee);*/
    
 }
@@ -20,20 +21,36 @@ h2{
 }
 
 main{
+    position:relative;
+    overflow-x: visible;
+    overflow-y: auto;
     border: solid;
     border-width: 1px;
     border-color: black;
-    width: 1024px;
-    height: 816px;
-    padding-top: 1em;
+    width: 1300px;
+    height: 640px;
+    padding-top: 2em;
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 1em;
     margin-left: auto;
     margin-right: auto;
     margin-top:2em;
-    margin-bottom:2em;
+    margin-bottom:0em;
+    border-radius: 12px;
+    background-color: #302020;
+    color: #000;
+}
+
+.searchresults{
+    margin: auto;
+    border: 1px solid black;
     border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    width: auto;
+    height: auto;
+    background-color: #eee;
 }
 
 header{
@@ -43,7 +60,7 @@ header{
     width: 100%;
     height: 4em;
     background: black;
-    background: linear-gradient(to top, #202020, #808080);
+    background: linear-gradient(to bottom, #202020, #302020);
     /*margin: .5em;
     margin:0 auto;*/
 }
@@ -54,10 +71,32 @@ header{
     margin-top: .4em;
 }
 
+.loginpage{
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    width: 300px;
+    height: 240px;
+    background-color: #eee;
+}
+
+.settingspage{
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    width: 410px;
+    height: 240px;
+    background-color: #eee;
+}
+
 .login{
     display: inline-block;
     float: right;
-    color: white;
+    color: #a0a0a0;
     font-size: 2em;
     font-weight: bold;
     margin-right: .6em;
@@ -82,12 +121,23 @@ header{
     height: 2.3em;
 }
 
+.searchbutton{
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+    margin-left: 1em;
+    margin-top: 1.35em;
+    width: 5em;
+    height: 2em;
+}
+
 .log_button{
     vertical-align: top;
     width: 5em;
-    height: 2.3em;
+    height: 2em;
     font: bold;
-    margin-top: 1.2em;
+    margin-top: 1.35em;
+    margin-left: 1em;
 }
 
 footer{
@@ -103,27 +153,33 @@ footer{
 }
 
 .edit_profile{
-    width: 100%;
+    width: 44.1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .left_heroes{
     display: inline-block;
     border: 1px solid black;
+    border-radius: 8px;
     text-align: center;
     float: left;
     width: 21.4em;
     height: 30em;
     margin-top: 1em;
+    background-color: #eee;
 }
 .right_heroes{
     display: inline-block;
     border: 1px solid black;
+    border-radius: 8px;
     text-align: center;
-    float: right;
+    float: left;
     width: 21.4em;
     height: 30em;
     margin-top: 1em;
     margin-left: 1em;
+    background-color: #eee;
 }
 
 .edit_hero{
@@ -141,6 +197,20 @@ footer{
 .edit_hero input{
     margin-right:1em;
     float: right;
+}
+
+.search_result{
+    position: relative;
+    display: inline-block;
+    width: 90%;
+}
+.heroname{
+    position: absolute;
+    left: 12em;
+}
+.search_result a{
+    position: absolute;
+    left: 18em;
 }
 
 .left_label{
@@ -182,7 +252,6 @@ footer{
 
 .attribute{
     display: block;
-    border: solid #D0D0D0 1px;
     margin: .5em;
     padding: 0em;
     width: 92%;
@@ -202,12 +271,15 @@ footer{
 .nametext{
     font-size: 1.8em;
     font-weight: bold;
+    color: cornflowerblue;
 }
 
 .buildtext{
     font-size: 1.5em;
+    color: white;
 }
 
 .tagtext{
     font-size: .8em;
+    color: cornflowerblue;
 }

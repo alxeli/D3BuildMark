@@ -65,5 +65,10 @@ namespace D3BuildMarkSite.Controls
 
             Response.Redirect("~/Buildview.aspx");
         }
+
+        protected void uxHeroLink2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

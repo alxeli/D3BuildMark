@@ -29,7 +29,8 @@
                 <asp:ContentPlaceHolder ID="cHeader" runat="server">
                     <div class="header">
                         <h1 class="logo">D3 BuildMark</h1>
-                        <asp:TextBox ID="uxSearch" CssClass="searchbox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="uxSearch" CssClass="searchbox" runat="server" />
+                        <asp:Button ID="uxSearchButton" Text="Search" CssClass="searchbutton" runat="server" OnClick="uxSearchButton_Click" />
                         <div class="login">
                             <asp:LoginStatus ID="uxLoginStatus" LoginText="" LogoutText="" Width=0 Height=0 runat="server" />
                             <asp:LoginView ID="uxLoginView" runat="server">
@@ -37,9 +38,9 @@
                                     <input id="uxLoginButton" class="log_button" type=button onclick="logg();" value="Login" runat=server/>
                                 </AnonymousTemplate>
                                 <LoggedInTemplate>
-                                    <input id="uxLogoutButton" type=button onclick="logg();" value="Logout" runat=server/>
                                     <asp:LoginName ID="uxLoginName" runat="server" />
-                                    <asp:Button ID="uxEditProfile" Text="Profile" OnClick="uxEditProfile_Click" runat="server" />
+                                    <asp:Button ID="uxEditProfile" Text="Profile" CssClass="log_button" OnClick="uxEditProfile_Click" runat="server" />
+                                    <input id="uxLogoutButton" type=button class="log_button" onclick="logg();" value="Logout" runat=server/>
                                 </LoggedInTemplate>
                             </asp:LoginView>
                         </div>
@@ -63,7 +64,7 @@
         
             <footer id="mpFooter">
                 <asp:ContentPlaceHolder ID="cFooter" runat="server">
-                    <asp:literal runat="server">AC Software™ 2016</asp:literal>
+                    <%--<asp:literal runat="server">AC Software™ 2016</asp:literal>--%>
                 </asp:ContentPlaceHolder>
             </footer>
         </div>

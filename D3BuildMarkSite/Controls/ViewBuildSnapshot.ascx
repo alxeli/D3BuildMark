@@ -5,24 +5,6 @@
 <script src="../jquery-1.12.0.js" type = 'text/javascript'></script>
 
 <script type="text/javascript">
-    
-    <%--function HideAllAttributes() {
-        document.getElementById("<%=uxNeckAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxShouldersAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxBracersAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxBeltAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxLeftRingAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxRightRingAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxPantsAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxBootsAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxLeftHandAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxRightHandAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxChestAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxGlovesAttributes.ClientID%>").style.display = "none";
-        document.getElementById("<%=uxHeadAttributes.ClientID%>").style.display = "none";
-    }
-    window.onload = HideAllAttributes;--%>
-
     function NeckAttributesOn() {
         var test = document.getElementById("<%=uxNeckAttributes.ClientID%>");
         test.style.display = "block";
@@ -141,11 +123,8 @@
     }
 </script>
 
-<%--<asp:ScriptManager ID="ScriptManager1" runat="server" />--%>
-<%--<form>--%>
     <div class="snapshot_right">
         <div class="title">
-            <%--<asp:Label ID="lblHeroName" CssClass="nametext" Text="Hero Name" runat="server" />--%>
             <asp:DropDownList ID="uxHeroName" runat="server" Font-Size="Large" AutoPostBack="True" OnSelectedIndexChanged="uxHeroName_SelectedIndexChanged" />
             <br />
             <asp:TextBox ID="uxBuildName" Text="" MaxLength="30" Visible="false" runat="server" />
@@ -160,6 +139,7 @@
             <asp:Label ID="lblBattletag" CssClass="tagtext" Text="battletag#0000" runat="server" />        
             <br />
         </div>
+
         <div class="images">
             <div class="item neck">
                 <asp:Label ID="lblNeck" AssociatedControlID="uxNeckImage" Visible="false" runat="server">Empty</asp:Label>
@@ -230,11 +210,32 @@
         <%--</div>--%>
         </div>
         <br />
+        
+        <div class="right">
+            <div class="version">
+                <asp:Label ID="lblVersion" Text="Build Snapshot" runat="server" />
+                <asp:DropDownList ID="uxVersion" AutoPostBack="true" Width="100%" AppendDataBoundItems="true" runat="server" OnSelectedIndexChanged="uxVersion_SelectedIndexChanged" />
+            </div>
+            <asp:Button ID="uxImportNewSnapshot" Text="Import" Visible="false" runat="server" OnClick="uxImportNewSnapshot_Click" />
+        </div>
 
+        
         <div class="left">
             <div class="attribute">
-                <asp:Label ID="lblPrimaryAttribute" CssClass="textleft" AssociatedControlID="uxPrimaryAttribute" runat="server">PrimaryAtt: </asp:Label>
-                <asp:Label ID="uxPrimaryAttribute" CssClass="textright" runat="server">0</asp:Label>
+                <asp:Label ID="lblStrength" CssClass="textleft" AssociatedControlID="uxStrength" runat="server">Strength: </asp:Label>
+                <asp:Label ID="uxStrength" CssClass="textright" runat="server">0</asp:Label>
+            </div>
+            <div class="attribute">
+                <asp:Label ID="lblDexterity" CssClass="textleft" AssociatedControlID="uxDexterity" runat="server">Dexterity: </asp:Label>
+                <asp:Label ID="uxDexterity" CssClass="textright" runat="server">0</asp:Label>
+            </div>
+            <div class="attribute">
+                <asp:Label ID="lblIntelligence" CssClass="textleft" AssociatedControlID="uxIntelligence" runat="server">Intelligence: </asp:Label>
+                <asp:Label ID="uxIntelligence" CssClass="textright" runat="server">0</asp:Label>
+            </div>
+            <div class="attribute">
+                <asp:Label ID="lblVitality" CssClass="textleft" AssociatedControlID="uxVitality" runat="server">Vitality: </asp:Label>
+                <asp:Label ID="uxVitality" CssClass="textright" runat="server">0</asp:Label>
             </div>
             <div class="attribute">
                 <asp:Label ID="lblDamage" CssClass="textleft" AssociatedControlID="uxDamage" runat="server">Damage: </asp:Label>
@@ -249,18 +250,19 @@
                 <asp:Label ID="uxRecovery" CssClass="textright" runat="server">0</asp:Label>
             </div>
             <div class="attribute">
-                <asp:Label ID="lblBuildMark" CssClass="textleft" AssociatedControlID="uxBuildMark" runat="server">BuildMark: </asp:Label>
-                <asp:Label ID="uxBuildMark" CssClass="textright" runat="server">0</asp:Label>
+                <asp:Label ID="lblLife" CssClass="textleft" AssociatedControlID="uxLife" runat="server">Life: </asp:Label>
+                <asp:Label ID="uxLife" CssClass="textright" runat="server">0</asp:Label>
+            </div>
+            <div class="attribute">
+                <asp:Label ID="lblBuildMarkSingle" CssClass="textleft" AssociatedControlID="uxBuildMarkSingle" runat="server">BuildMark (Single): </asp:Label>
+                <asp:Label ID="uxBuildMarkSingle" CssClass="textright" runat="server">0</asp:Label>
+            </div>
+            <div class="attribute">
+                <asp:Label ID="lblBuildMarkMultiple" CssClass="textleft" AssociatedControlID="uxBuildMarkMultiple" runat="server">BuildMark (Multiple): </asp:Label>
+                <asp:Label ID="uxBuildMarkMultiple" CssClass="textright" runat="server">0</asp:Label>
             </div>
         </div>
 
-        <div class="right">
-            <div class="version">
-                <asp:Label ID="lblVersion" Text="Vers." runat="server" />
-                <asp:DropDownList ID="uxVersion" AutoPostBack="true" Width="100%" AppendDataBoundItems="true" runat="server" OnSelectedIndexChanged="uxVersion_SelectedIndexChanged" />
-            </div>
-            <asp:Button ID="uxImportNewSnapshot" Text="Import" Visible="false" runat="server" OnClick="uxImportNewSnapshot_Click" />
-        </div>
         
         <%--<div style="clear:both;"></div>--%>
     

@@ -137,15 +137,20 @@ CREATE PROC spCreateBuildMark
 	@HeroName		varchar(12),
 	@BuildName		varchar(30),
 
-	@Score			int,
+	@ScoreSingle	int,
+	@ScoreMultiple	int,
+	@Strength		int,
+	@Dexterity		int,
+	@Intelligence	int,
+	@Vitality		int,
 	@Damage			int,
 	@Toughness		int,
 	@Recovery		int,
-	@PrimaryAtt		int,
+	@Life			int,
 	@Date			datetime
 AS
 BEGIN TRANSACTION
-	INSERT INTO BuildMark (BuildSnapshotID, Score, Damage, Toughness, Recovery, PrimaryAtt, Date)
+	INSERT INTO BuildMark (BuildSnapshotID, ScoreSingle, ScoreMultiple, Strength, Dexterity, Intelligence, Vitality, Damage, Toughness, Recovery, Life, Date)
 		VALUES
 		(
 			(SELECT BuildSnapshot.BuildSnapshotID FROM BuildSnapshot
@@ -155,11 +160,16 @@ BEGIN TRANSACTION
 					AND UserProfile.Battletag = @Battletag
 					AND Hero.HeroName = @HeroName
 					AND BuildSnapshot.BuildName = @BuildName),
-			@Score,
+			@ScoreSingle,
+			@ScoreMultiple,
+			@Strength,
+			@Dexterity,
+			@Intelligence,
+			@Vitality,
 			@Damage,
 			@Toughness,
 			@Recovery,
-			@PrimaryAtt,
+			@Life,
 			@Date
 		)
 COMMIT
@@ -175,7 +185,10 @@ CREATE PROC spReadBuildMark
 	@BuildName		varchar(30)
 AS
 BEGIN TRANSACTION
-	SELECT BuildMark.Score, BuildMark.Damage, BuildMark.Toughness, BuildMark.Recovery, BuildMark.PrimaryAtt, BuildMark.Date FROM BuildMark 
+	SELECT BuildMark.ScoreSingle, BuildMark.ScoreMultiple, BuildMark.Strength, BuildMark.Dexterity, 
+		BuildMark.Intelligence, BuildMark.Vitality, BuildMark.Damage, BuildMark.Toughness, 
+		BuildMark.Recovery, BuildMark.Life, BuildMark.Date 
+		FROM BuildMark 
 		JOIN BuildSnapshot ON BuildMark.BuildSnapshotID = BuildSnapshot.BuildSnapshotID
 		JOIN Hero ON BuildSnapshot.HeroID = Hero.HeroID
 		JOIN UserProfile ON Hero.UserID = UserProfile.UserID 
@@ -195,11 +208,12 @@ CREATE PROC spUpdateBuildMarkScore
 	@HeroName		varchar(12),
 	@BuildName		varchar(30),
 
-	@Score			int
+	@ScoreSingle	int,
+	@ScoreMultiple	int
 AS
 BEGIN TRANSACTION
 	UPDATE BuildMark 
-	SET BuildMark.Score = @Score 
+	SET BuildMark.ScoreSingle = @ScoreSingle, BuildMark.ScoreMultiple = @ScoreMultiple 
 	WHERE BuildMark.BuildSnapshotID = 
 		(SELECT BuildSnapshot.BuildSnapshotID FROM BuildSnapshot
 			JOIN Hero ON BuildSnapshot.HeroID = Hero.HeroID
@@ -444,3 +458,34 @@ BEGIN TRANSACTION
 	ORDER BY BS_Skill.SkillType ASC
 COMMIT TRANSACTION
 GO
+
+IF OBJECT_ID('spSearchHeroNames') IS NOT NULL
+DROP PROC spSearchHeroNames
+GO
+CREATE PROC spSearchHeroNames
+@HeroName		varchar(12)
+AS SELECT UserProfile.UserGUID, UserProfile.UserName, UserProfile.Battletag, Hero.HeroName, Hero.HeroClass FROM Hero 
+		JOIN UserProfile ON Hero.UserID = UserProfile.UserID
+		WHERE Hero.HeroName LIKE CONCAT('%', @HeroName, '%')
+GO
+
+IF OBJECT_ID('spSearchClassNames') IS NOT NULL
+DROP PROC spSearchClassNames
+GO
+CREATE PROC spSearchClassNames
+@ClassName		varchar(12)
+AS SELECT UserProfile.UserGUID, UserProfile.UserName, UserProfile.Battletag, Hero.HeroName, Hero.HeroClass FROM Hero 
+		JOIN UserProfile ON Hero.UserID = UserProfile.UserID
+		WHERE Hero.HeroClass LIKE CONCAT('%', @ClassName, '%')
+GO
+
+IF OBJECT_ID('spSearchBattletags') IS NOT NULL
+DROP PROC spSearchBattletags
+GO
+CREATE PROC spSearchBattletags
+@Battletag varchar(40)
+AS SELECT UserProfile.UserGUID, UserProfile.UserName, UserProfile.Battletag, Hero.HeroName, Hero.HeroClass FROM Hero 
+		JOIN UserProfile ON Hero.UserID = UserProfile.UserID
+		WHERE UserProfile.Battletag LIKE CONCAT('%', @Battletag, '%')
+GO
+

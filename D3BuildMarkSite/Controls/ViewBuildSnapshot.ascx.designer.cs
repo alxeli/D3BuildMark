@@ -445,22 +445,103 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.TextBox uxHeadAttributes;
         
         /// <summary>
-        /// lblPrimaryAttribute control.
+        /// lblVersion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrimaryAttribute;
+        protected global::System.Web.UI.WebControls.Label lblVersion;
         
         /// <summary>
-        /// uxPrimaryAttribute control.
+        /// uxVersion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label uxPrimaryAttribute;
+        protected global::System.Web.UI.WebControls.DropDownList uxVersion;
+        
+        /// <summary>
+        /// uxImportNewSnapshot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxImportNewSnapshot;
+        
+        /// <summary>
+        /// lblStrength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStrength;
+        
+        /// <summary>
+        /// uxStrength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uxStrength;
+        
+        /// <summary>
+        /// lblDexterity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDexterity;
+        
+        /// <summary>
+        /// uxDexterity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uxDexterity;
+        
+        /// <summary>
+        /// lblIntelligence control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIntelligence;
+        
+        /// <summary>
+        /// uxIntelligence control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uxIntelligence;
+        
+        /// <summary>
+        /// lblVitality control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVitality;
+        
+        /// <summary>
+        /// uxVitality control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uxVitality;
         
         /// <summary>
         /// lblDamage control.
@@ -517,48 +598,57 @@ namespace D3BuildMarkSite.Controls {
         protected global::System.Web.UI.WebControls.Label uxRecovery;
         
         /// <summary>
-        /// lblBuildMark control.
+        /// lblLife control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBuildMark;
+        protected global::System.Web.UI.WebControls.Label lblLife;
         
         /// <summary>
-        /// uxBuildMark control.
+        /// uxLife control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label uxBuildMark;
+        protected global::System.Web.UI.WebControls.Label uxLife;
         
         /// <summary>
-        /// lblVersion control.
+        /// lblBuildMarkSingle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVersion;
+        protected global::System.Web.UI.WebControls.Label lblBuildMarkSingle;
         
         /// <summary>
-        /// uxVersion control.
+        /// uxBuildMarkSingle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList uxVersion;
+        protected global::System.Web.UI.WebControls.Label uxBuildMarkSingle;
         
         /// <summary>
-        /// uxImportNewSnapshot control.
+        /// lblBuildMarkMultiple control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button uxImportNewSnapshot;
+        protected global::System.Web.UI.WebControls.Label lblBuildMarkMultiple;
+        
+        /// <summary>
+        /// uxBuildMarkMultiple control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label uxBuildMarkMultiple;
     }
 }

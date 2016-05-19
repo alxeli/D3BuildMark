@@ -1,17 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{38559B18-F03F-4244-B112-C4A15D3D5E35}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{351FE816-BCD9-42A7-B701-B778DA199DEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{FB74B73B-2909-4207-AF8D-62598FDDB4A2}"
-	ProjectSection(SolutionItems) = preProject
-		Documentation\changes.txt = Documentation\changes.txt
-		Documentation\todo.txt = Documentation\todo.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Object Model", "Object Model", "{3149403E-A04C-4A51-8E5F-4013D830C656}"
 	ProjectSection(SolutionItems) = preProject

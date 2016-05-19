@@ -27,7 +27,6 @@ namespace D3BuildMarkSite.Controls
             m_snapshots = (List<AC_BuildSnapshot>)Session["Snapshots_1"];
             c_snapshot = (AC_BuildSnapshot)Session["Snapshot_1"];
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -123,14 +122,20 @@ namespace D3BuildMarkSite.Controls
                 uxAltChestAttributes.Text = c_snapshot.Items["Chest"].Name + "\n" + c_snapshot.Items["Chest"].Attributes;
                 uxAltGlovesAttributes.Text = c_snapshot.Items["Gloves"].Name + "\n" + c_snapshot.Items["Gloves"].Attributes;
                 uxAltHeadAttributes.Text = c_snapshot.Items["Head"].Name + "\n" + c_snapshot.Items["Head"].Attributes;
+                
+                uxAltStrength.Text = c_snapshot.BuildMark.Strength.ToString("0,0");
+                uxAltDexterity.Text = c_snapshot.BuildMark.Dexterity.ToString("0,0");
+                uxAltIntelligence.Text = c_snapshot.BuildMark.Intelligence.ToString("0,0");
+                uxAltVitality.Text = c_snapshot.BuildMark.Vitality.ToString("0,0");
 
-                uxAltPrimaryAttribute.Text = c_snapshot.BuildMark.Primary.ToString("0,0");
                 uxAltDamage.Text = c_snapshot.BuildMark.Damage.ToString("0,0");
                 uxAltToughness.Text = c_snapshot.BuildMark.Toughness.ToString("0,0");
                 uxAltRecovery.Text = c_snapshot.BuildMark.Recovery.ToString("0,0");
 
-                
+                uxAltLife.Text = c_snapshot.BuildMark.Life.ToString("0,0");
 
+                uxAltBuildMarkSingle.Text = c_snapshot.BuildMark.ScoreSingle.ToString("0,0");
+                uxAltBuildMarkMultiple.Text = c_snapshot.BuildMark.ScoreMultiple.ToString("0,0");
 
                 #endregion
 
@@ -155,14 +160,14 @@ namespace D3BuildMarkSite.Controls
                     if (lblBuildName.Text == "NOT IMPORTED")
                     {
                         //not in the database
-                        uxAltImportSnapshot.Visible = true;
+                        //uxAltImportSnapshot.Visible = true;
                         uxAltEditBuildName.Visible = false;
                         uxAltDeleteSnapshot.Visible = false;
                     }
                     else
                     {
                         //is in the database
-                        uxAltImportSnapshot.Visible = false;
+                        //uxAltImportSnapshot.Visible = false;
                         uxAltEditBuildName.Visible = true;
                         uxAltDeleteSnapshot.Visible = true;
                     }
@@ -171,7 +176,7 @@ namespace D3BuildMarkSite.Controls
                 else
                 {
                     uxAltEditBuildName.Visible = false;
-                    uxAltImportSnapshot.Visible = false;
+                    //uxAltImportSnapshot.Visible = false;
                     uxAltDeleteSnapshot.Visible = false;
                     uxAltImportNewSnapshot.Visible = false;
                 }
@@ -182,18 +187,21 @@ namespace D3BuildMarkSite.Controls
                 //Session["Hero_1"] = m_hero;
                 //Session["Snapshots_1"] = m_snapshots;
                 //Session["Snapshot_1"] = c_snapshot;
-                
-                uxAltHeroName.DataTextField = "Name";
-                uxAltHeroName.DataSource = m_user.Profile.Heroes;
-                uxAltHeroName.SelectedValue = m_hero.Name;
-                //uxAltHeroName.SelectedIndex = Session["hero_ddl_index_alt"] == null ? 0 : (int)Session["hero_ddl_index_alt"];
-                uxAltHeroName.DataBind();
 
-                uxAltVersion.DataTextField = "Name";
-                uxAltVersion.DataSource = m_snapshots;
-                //uxAltVersion.SelectedValue = c_snapshot.Name;
-                uxAltVersion.SelectedIndex = Session["ddl_index_alt"] == null ? 0 : (int)Session["ddl_index_alt"];
-                uxAltVersion.DataBind();
+                if (m_hero.IsStored == true)
+                {
+                    uxAltHeroName.DataTextField = "Name";
+                    uxAltHeroName.DataSource = m_user.Profile.Heroes;
+                    uxAltHeroName.SelectedValue = m_hero.Name;
+                    //uxAltHeroName.SelectedIndex = Session["hero_ddl_index_alt"] == null ? 0 : (int)Session["hero_ddl_index_alt"];
+                    uxAltHeroName.DataBind();
+
+                    uxAltVersion.DataTextField = "Name";
+                    uxAltVersion.DataSource = m_snapshots;
+                    //uxAltVersion.SelectedValue = c_snapshot.Name;
+                    uxAltVersion.SelectedIndex = Session["ddl_index_alt"] == null ? 0 : (int)Session["ddl_index_alt"];
+                    uxAltVersion.DataBind();
+                }
             }
             else
             {
@@ -208,19 +216,19 @@ namespace D3BuildMarkSite.Controls
                 AC_BuildMark other_buildmark = ((AC_BuildSnapshot)Session["Snapshot_0"]).BuildMark;
                 AC_BuildMark this_buildmark = ((AC_BuildSnapshot)Session["Snapshot_1"]).BuildMark;
 
-                //Set color for primary attribute
-                if (this_buildmark.Primary == other_buildmark.Primary)
-                {
-                    uxAltPrimaryAttribute.ForeColor = System.Drawing.Color.Black;
-                }
-                else if (this_buildmark.Primary > other_buildmark.Primary)
-                {
-                    uxAltPrimaryAttribute.ForeColor = System.Drawing.Color.Green;
-                }
-                else
-                {
-                    uxAltPrimaryAttribute.ForeColor = System.Drawing.Color.Red;
-                }
+                ////Set color for primary attribute
+                //if (this_buildmark.Primary == other_buildmark.Primary)
+                //{
+                //    uxAltPrimaryAttribute.ForeColor = System.Drawing.Color.Black;
+                //}
+                //else if (this_buildmark.Primary > other_buildmark.Primary)
+                //{
+                //    uxAltPrimaryAttribute.ForeColor = System.Drawing.Color.Green;
+                //}
+                //else
+                //{
+                //    uxAltPrimaryAttribute.ForeColor = System.Drawing.Color.Red;
+                //}
 
                 //Set color for Damage
                 if (this_buildmark.Damage == other_buildmark.Damage)
@@ -266,7 +274,7 @@ namespace D3BuildMarkSite.Controls
             }
             else
             {
-                uxAltPrimaryAttribute.ForeColor = System.Drawing.Color.Black;
+                //uxAltPrimaryAttribute.ForeColor = System.Drawing.Color.Black;
                 uxAltDamage.ForeColor = System.Drawing.Color.Black;
                 uxAltToughness.ForeColor = System.Drawing.Color.Black;
                 uxAltRecovery.ForeColor = System.Drawing.Color.Black;
@@ -301,7 +309,6 @@ namespace D3BuildMarkSite.Controls
 
             return ret_value;
         }
-
         //Gets the url of an image
         //if there is no item, the image is set to a placeholder image signifying an empty item slot
         private string GetImageUrl(AC_Item item)
@@ -339,7 +346,6 @@ namespace D3BuildMarkSite.Controls
 
             return t_image_url;
         }
-
         protected void uxAltEditBuildName_Click(object sender, EventArgs e)
         {
             uxAltSaveBuildName.Visible = true;
@@ -364,17 +370,17 @@ namespace D3BuildMarkSite.Controls
 
             Response.Redirect(Request.RawUrl);
         }
-        protected void uxAltImportSnapshot_Click(object sender, EventArgs e)
-        {
-            //create hero in the database
-            m_manager.CreateHero(m_user, m_hero);
+        //protected void uxAltImportSnapshot_Click(object sender, EventArgs e)
+        //{
+        //    //create hero in the database
+        //    m_manager.CreateHero(m_user, m_hero);
 
-            //store build snapshot in database
-            c_snapshot.Name = "Temp Name";
-            m_manager.CreateBuildSnapshot(m_user, m_hero, c_snapshot);
+        //    //store build snapshot in database
+        //    c_snapshot.Name = "Temp Name";
+        //    m_manager.CreateBuildSnapshot(m_user, m_hero, c_snapshot);
 
-            Response.Redirect(Request.RawUrl);
-        }
+        //    Response.Redirect(Request.RawUrl);
+        //}
         protected void uxAltImportNewSnapshot_Click(object sender, EventArgs e)
         {
             //Import new snapshot via API
@@ -418,9 +424,10 @@ namespace D3BuildMarkSite.Controls
 
             Response.Redirect("~/BuildCompareView.aspx");
         }
-
         protected void uxAltHeroName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Session["ddl_index_alt"] = 0;
+
             Session["Hero_1"] = m_user.Profile.Heroes.Find(a => a.Name == uxAltHeroName.SelectedValue);
             m_hero = (AC_Hero)Session["Hero_1"];
             Session["User_1"] = m_user;
@@ -435,6 +442,13 @@ namespace D3BuildMarkSite.Controls
 
             //Session["Snapshots_1"] = m_snapshots;
             //Session["Snapshot_1"] = c_snapshot;
+
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void uxRunBuildMark_Click(object sender, EventArgs e)
+        {
+            BuildMarkManager.GetInstance().Add(m_user, m_hero, c_snapshot);
 
             Response.Redirect(Request.RawUrl);
         }
