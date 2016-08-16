@@ -186,6 +186,8 @@
     <Content Include="Images\Wrath of the Bone King.png" />
     <Content Include="packages.config" />
     <Content Include="App_Master\BaseTemplate.Master" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\local2.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
