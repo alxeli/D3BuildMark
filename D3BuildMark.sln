@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{38559B18-F03F-4244-B112-C4A15D3D5E35}"
 EndProject
@@ -109,12 +109,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "DataManag
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4C03C122-2B14-45E3-A7E1-54E4D10DEE1C}"
 	ProjectSection(SolutionItems) = preProject
+		Documentation\Database\dbCreate.sql = Documentation\Database\dbCreate.sql
 		dbCreate2.0.sql = dbCreate2.0.sql
-		dbMembCon.sql = dbMembCon.sql
-		dbStoredProcs2.0.sql = dbStoredProcs2.0.sql
+		Documentation\Database\dbMembCon.sql = Documentation\Database\dbMembCon.sql
+		Documentation\Database\dbStoredProcs.sql = Documentation\Database\dbStoredProcs.sql
+		Documentation\Database\dbStoredProcs2.0.sql = Documentation\Database\dbStoredProcs2.0.sql
 		Documentation\Database\ER1.0.vsdx = Documentation\Database\ER1.0.vsdx
 		Documentation\Database\ER2.0.vsdx = Documentation\Database\ER2.0.vsdx
-		SelectUsersAndHeroes.sql = SelectUsersAndHeroes.sql
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3BuildMarkSite", "D3BuildMarkSite\D3BuildMarkSite.csproj", "{96EDCB0B-27FF-4FDE-AF08-F354B02EFD00}"

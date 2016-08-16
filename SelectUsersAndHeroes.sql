@@ -1,2 +1,0 @@
-﻿SELECT * FROM UserProfile
-SELECT * FROM Hero
