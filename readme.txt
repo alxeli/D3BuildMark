@@ -1,6 +1,6 @@
 This is an academic project that was proposed & designed over the course of 10 weeks, then implemented over another 10 week period.
 
-/Documention: All documentation for the project including the following noteworthy documents:
+/Documentation: All documentation for the project including the following noteworthy documents:
 	"/Proposal/Diablo III BuildMark 1.2.docx" - Latest version of the official project proposal.
 	"/Use Case Model/Diablo III BuildMark - Use Case Model 1.5.docx" - Latest version of the use case model containing a context diagram, use cases, feature verification matrix, crud matrix, and a UI mockup.
 	"/Object Model/Diablo III BuildMark - Object Model 2.0.docx" - Latests version of the object model which includes class diagrams for the system.
